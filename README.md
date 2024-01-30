@@ -1,8 +1,8 @@
 # upqayt
 
-An application that facilitates ordering food and groceries from restaurants and cafes
+An application that facilitates ordering food and groceries from restaurants and cafes.
 
-Restoran va kafe lardan ovqat va yeguliklarni buyurtma berishni qulaylashtiruvchi ilova
+Restoran va kafe lardan ovqat va yeguliklarni buyurtma berishni qulaylashtiruvchi ilova.
 
 Приложение, облегчающее заказ еды и продуктов из ресторанов и кафе.
 
