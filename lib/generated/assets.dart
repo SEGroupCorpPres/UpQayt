@@ -21,8 +21,8 @@ class Assets {
   static const String iconsCornIcon = 'assets/icons/corn_icon.png';
   static const String iconsCurierIcon = 'assets/icons/curier_icon.png';
   static const String iconsEggIcon = 'assets/icons/egg_icon.png';
+  static const String iconsFilterIcon = 'assets/icons/filter_icon.png';
   static const String iconsFrame = 'assets/icons/Frame.png';
-  static const String iconsFrame1 = 'assets/icons/Frame-1.png';
   static const String iconsFrame2 = 'assets/icons/Frame-2.png';
   static const String iconsFrame3 = 'assets/icons/Frame-3.png';
   static const String iconsFrame4 = 'assets/icons/Frame-4.png';
@@ -36,6 +36,7 @@ class Assets {
   static const String iconsHodDogIcon2 = 'assets/icons/hod_dog_icon_2.png';
   static const String iconsHodDogIcon3 = 'assets/icons/hod_dog_icon_3.png';
   static const String iconsLavashIcon = 'assets/icons/lavash_icon.png';
+  static const String iconsLocationIcon = 'assets/icons/location_icon.png';
   static const String iconsMixFoodIcon = 'assets/icons/mix_food_icon.png';
   static const String iconsNotificationsOn = 'assets/icons/Notifications-On.png';
   static const String iconsPancakeIcon = 'assets/icons/pancake_icon.png';
@@ -47,6 +48,7 @@ class Assets {
   static const String iconsSoupIcon2 = 'assets/icons/soup_icon_2.png';
   static const String iconsSushiIcon = 'assets/icons/sushi_icon.png';
   static const String iconsSushiIcon2 = 'assets/icons/sushi_icon_2.png';
+  static const String iconsTaxiIcon = 'assets/icons/taxi_icon.png';
   static const String imagesAction = 'assets/images/action.png';
   static const String imagesActionLogo = 'assets/images/action_logo.png';
   static const String imagesBackground = 'assets/images/background.png';
@@ -71,6 +73,7 @@ class Assets {
   static const String imagesKfc = 'assets/images/kfc.png';
   static const String imagesKfc2 = 'assets/images/kfc_2.png';
   static const String imagesKhivaMoon = 'assets/images/khiva_moon.png';
+  static const String imagesKhorazmArtRestaurant2 = 'assets/images/khorazm_art_restaurant2.png';
   static const String imagesKingBurger = 'assets/images/king_burger.png';
   static const String imagesKxorazmArtRestaurant = 'assets/images/kxorazm_art_restaurant.png';
   static const String imagesLavash = 'assets/images/lavash.png';
