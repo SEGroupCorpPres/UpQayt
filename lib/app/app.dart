@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/app/presentation/pages/intro.dart';
 import 'package:upqayt/app/presentation/pages/onboarding.dart';
+import 'package:upqayt/app/presentation/pages/splash_screen.dart';
 import 'package:upqayt/config/theme.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
 
@@ -22,7 +23,8 @@ class App extends StatelessWidget {
         );
       },
       // child: HomePage(),
-      child: IntroScreen(),
+      // child: IntroScreen(),
+      child: SplashScreen(),
       // child: OnboardingPage(),
     );
   }
