@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:upqayt/app/presentation/pages/onboarding.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/generated/assets.dart';
 
@@ -133,7 +134,12 @@ class _IntroScreenState extends State<IntroScreen> {
                         ],
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => OnboardingPage(),
+                          ),
+                        ),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width,
                           margin: EdgeInsets.symmetric(horizontal: 4.w),

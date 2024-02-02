@@ -3,6 +3,9 @@ class Assets {
   Assets._();
 
   static const String assetsBackground = 'assets/background.png';
+  static const String assetsImagesOnboarding1 = 'assets/images/onboarding_1.svg';
+  static const String assetsImagesOnboarding2 = 'assets/images/onboarding_2.svg';
+  static const String assetsImagesOnboarding3 = 'assets/images/onboarding_3.svg';
   static const String assetsSplashLogo = 'assets/splash_logo.png';
   static const String iconsAvocadoIcon = 'assets/icons/avocado_icon.png';
   static const String iconsBag = 'assets/icons/Bag.png';
@@ -89,9 +92,9 @@ class Assets {
   static const String imagesNavrozRestaurant = 'assets/images/navroz_restaurant.png';
   static const String imagesNonKabob = 'assets/images/non_kabob.png';
   static const String imagesNostalgiaBurger = 'assets/images/nostalgia_burger.png';
-  static const String imagesOnboarding1 = 'assets/images/onboarding_1.svg';
-  static const String imagesOnboarding2 = 'assets/images/onboarding_2.svg';
-  static const String imagesOnboarding3 = 'assets/images/onboarding_3.svg';
+  static const String imagesOnboarding1 = 'assets/images/onboarding_1.png';
+  static const String imagesOnboarding2 = 'assets/images/onboarding_2.png';
+  static const String imagesOnboarding3 = 'assets/images/onboarding_3.png';
   static const String imagesOrderMap = 'assets/images/order_map.png';
   static const String imagesPepperoniPizza = 'assets/images/pepperoni_pizza.png';
   static const String imagesPizza = 'assets/images/pizza.png';
