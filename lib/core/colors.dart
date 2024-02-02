@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppColors{
+class AppColors {
   static const mainColor = Color(0xFF22A947);
   static const scaffoldBGColor = Color(0xFFF0F8F3);
   static const mainBGColor = Color(0xFFF0F8F3);
@@ -12,5 +13,4 @@ class AppColors{
   static const canselBtnBGColor = Color(0xFFFFF1F1);
   static const activeFavouriteColor = Color(0xFFFDCC0D);
   static const inActiveFavouriteColor = Color(0xFFE5E5EA);
-
 }

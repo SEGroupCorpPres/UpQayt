@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsBackground = 'assets/background.png';
   static const String assetsSplashLogo = 'assets/splash_logo.png';
   static const String iconsAvocadoIcon = 'assets/icons/avocado_icon.png';
   static const String iconsBag = 'assets/icons/Bag.png';
@@ -36,6 +37,7 @@ class Assets {
   static const String iconsHodDogIcon2 = 'assets/icons/hod_dog_icon_2.png';
   static const String iconsHodDogIcon3 = 'assets/icons/hod_dog_icon_3.png';
   static const String iconsLavashIcon = 'assets/icons/lavash_icon.png';
+  static const String iconsLocation = 'assets/icons/location.svg';
   static const String iconsLocationIcon = 'assets/icons/location_icon.png';
   static const String iconsMixFoodIcon = 'assets/icons/mix_food_icon.png';
   static const String iconsNotificationsOn = 'assets/icons/Notifications-On.png';
@@ -48,10 +50,10 @@ class Assets {
   static const String iconsSoupIcon2 = 'assets/icons/soup_icon_2.png';
   static const String iconsSushiIcon = 'assets/icons/sushi_icon.png';
   static const String iconsSushiIcon2 = 'assets/icons/sushi_icon_2.png';
+  static const String iconsTaxi = 'assets/icons/taxi.svg';
   static const String iconsTaxiIcon = 'assets/icons/taxi_icon.png';
   static const String imagesAction = 'assets/images/action.png';
   static const String imagesActionLogo = 'assets/images/action_logo.png';
-  static const String imagesBackground = 'assets/images/background.png';
   static const String imagesBigBurger = 'assets/images/big_burger.png';
   static const String imagesBigPizza = 'assets/images/big_pizza.png';
   static const String imagesBurger = 'assets/images/burger.png';

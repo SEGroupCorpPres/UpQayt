@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
 
 class TopProducts extends StatelessWidget {
@@ -58,11 +59,7 @@ class TopProducts extends StatelessWidget {
                           ),
                           Text(
                             rebate!,
-                            style: const TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ),
+                            style: Theme.of(context).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w600),
                             textAlign: TextAlign.center,
                           ),
                         ],
@@ -78,24 +75,15 @@ class TopProducts extends StatelessWidget {
               const SizedBox(height: 10),
               Text(
                 title,
-                style: const TextStyle(
-                  color: Color(0xFF1C1C20),
-                  fontSize: 14,
-                  fontFamily: 'Rubik',
-                  fontWeight: FontWeight.w600,
-                  height: 0,
-                ),
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 14.sp),
               ),
               const SizedBox(height: 8),
               Text(
                 subtitle,
-                style: const TextStyle(
-                  color: Color(0xFF8999A6),
-                  fontSize: 12,
-                  fontFamily: 'Rubik',
-                  fontWeight: FontWeight.w400,
-                  height: 0,
-                ),
+                style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                      color: Colors.grey,
+                      fontSize: 10.sp,
+                    ),
               ),
             ],
           ),
