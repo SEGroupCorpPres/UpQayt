@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:upqayt/app/presentation/pages/onboarding.dart';
 import 'package:upqayt/core/colors.dart';
+import 'package:upqayt/core/widgets/main_button.dart';
 import 'package:upqayt/generated/assets.dart';
 
 enum Language {
@@ -39,9 +41,8 @@ class _IntroScreenState extends State<IntroScreen> {
               SizedBox(
                 height: MediaQuery.sizeOf(context).height * 2 / 3 - kToolbarHeight - kTextTabBarHeight,
                 child: Center(
-                  child: Image.asset(
-                    Assets.assetsSplashLogo,
-                    colorBlendMode: BlendMode.xor,
+                  child: SvgPicture.asset(
+                    Assets.assetsLogo,
                   ),
                 ),
               ),
@@ -133,26 +134,12 @@ class _IntroScreenState extends State<IntroScreen> {
                           ),
                         ],
                       ),
-                      InkWell(
+                      MainButton(
+                        title: 'Keyingi',
                         onTap: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => OnboardingPage(),
-                          ),
-                        ),
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width,
-                          margin: EdgeInsets.symmetric(horizontal: 4.w),
-                          height: 40.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12.r),
-                            color: AppColors.mainColor,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Keyingi',
-                              style: Theme.of(context).textTheme.labelMedium,
-                            ),
+                            builder: (_) => const OnboardingPage(),
                           ),
                         ),
                       ),

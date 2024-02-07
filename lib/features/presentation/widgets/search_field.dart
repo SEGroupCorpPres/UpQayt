@@ -5,42 +5,59 @@ import 'package:upqayt/core/colors.dart';
 
 class SearchField extends StatelessWidget {
   final Size size;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
+  final IconData? suffixIcon;
   final Color prefixIconColor;
   final String hintText;
   final Color hintTextColor;
+  final EdgeInsets margin;
+  final Color bgColor;
+  final double width;
+  final double contentPaddingHorizontally;
+  final double contentPaddingVertically;
+  final TextStyle hintStyle;
+  final TextEditingController controller;
 
   const SearchField({
     super.key,
     required this.size,
-    this.prefixIcon = CupertinoIcons.search,
+    this.prefixIcon,
     this.prefixIconColor = AppColors.restaurantDescription,
     required this.hintText,
     this.hintTextColor = AppColors.restaurantDescription,
+    this.margin = const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+    this.suffixIcon,
+    this.bgColor = Colors.white,
+    required this.width,
+    this.contentPaddingHorizontally = 25,
+    this.contentPaddingVertically = 10, required this.hintStyle, required this.controller
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width,
+      width: width,
       height: 40.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15).r,
-        color: Colors.white,
+        borderRadius: BorderRadius.circular(10).r,
+        color: bgColor,
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15).r,
+      margin: margin.r,
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10).r,
-          prefixIcon: Icon(
+          contentPadding: EdgeInsets.symmetric(horizontal: contentPaddingHorizontally, vertical: contentPaddingVertically).r,
+          prefixIcon: prefixIcon != null ? Icon(
             prefixIcon,
             color: prefixIconColor,
-          ),
+          ) : null,
           hintText: hintText,
-          hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
-                color: AppColors.subtitleColor,
-              ),
+          hintStyle: hintStyle,
+          suffixIcon: suffixIcon != null ? Icon(
+            suffixIcon,
+            color: prefixIconColor,
+          ) : null,
         ),
       ),
     );

@@ -5,6 +5,8 @@ import 'package:upqayt/app/presentation/pages/onboarding.dart';
 import 'package:upqayt/app/presentation/pages/splash_screen.dart';
 import 'package:upqayt/config/theme.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
+import 'package:upqayt/features/presentation/pages/map/map_screen.dart';
+import 'package:upqayt/features/presentation/pages/map/search_screen.dart';
 
 class App extends StatelessWidget {
   App({super.key});
@@ -24,7 +26,9 @@ class App extends StatelessWidget {
       },
       // child: HomePage(),
       // child: IntroScreen(),
-      child: SplashScreen(),
+      // child: SplashScreen(),
+      // child: YandexMapScreen(),
+      child: SearchScreen(),
       // child: OnboardingPage(),
     );
   }

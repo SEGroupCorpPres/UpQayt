@@ -13,4 +13,5 @@ class AppColors {
   static const canselBtnBGColor = Color(0xFFFFF1F1);
   static const activeFavouriteColor = Color(0xFFFDCC0D);
   static const inActiveFavouriteColor = Color(0xFFE5E5EA);
+  static const textFieldColor = Color(0xFFF2F4F7);
 }

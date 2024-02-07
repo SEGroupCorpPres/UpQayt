@@ -47,16 +47,24 @@ class TopProducts extends StatelessWidget {
               ),
               rebate != null
                   ? Positioned(
-                      top: -10,
+                      top: 10,
                       left: 8,
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
-                          const Icon(
-                            Icons.bookmark,
-                            color: AppColors.rebatePriceColor,
-                            size: 55,
+                          Container(
+                            width: 50,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              color: AppColors.mainColor,
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
                           ),
+                          // const Icon(
+                          //   Icons.bookmark,
+                          //   color: AppColors.rebatePriceColor,
+                          //   size: 55,
+                          // ),
                           Text(
                             rebate!,
                             style: Theme.of(context).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w600),
