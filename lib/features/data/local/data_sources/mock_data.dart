@@ -100,3 +100,26 @@ List<Map<String, dynamic>> restaurants = [
     'taxi_price': 12000,
   },
 ];
+
+List<Map<String, String>> streetList = [
+  {
+    'name': 'Al-Xorazmiy',
+    'tuman': 'Xorazm, Urganch',
+  },
+  {
+    'name': 'Islom Karimov',
+    'tuman': 'Xorazm, Urganch',
+  },
+  {
+    'name': 'Xonqa',
+    'tuman': 'Xorazm, Urganch',
+  },
+  {
+    'name': 'Xiva',
+    'tuman': 'Xorazm, Urganch',
+  },
+  {
+    'name': 'Gurlan',
+    'tuman': 'Xorazm, Urganch',
+  }
+];
