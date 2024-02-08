@@ -95,9 +95,6 @@ class _YandexMapScreenState extends State<YandexMapScreen> {
                         isPressed = true;
                       });
                       showFlexibleBottomSheet(
-                        isDismissible: false,
-                        useRootScaffold: false,
-                        // isModal: false,
                         minHeight: 0,
                         initHeight: 0.5,
                         maxHeight: 0.5,

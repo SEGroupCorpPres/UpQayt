@@ -24,11 +24,11 @@ class App extends StatelessWidget {
           home: child,
         );
       },
-      // child: HomePage(),
+      child: HomePage(),
       // child: IntroScreen(),
       // child: SplashScreen(),
       // child: YandexMapScreen(),
-      child: SearchScreen(),
+      // child: SearchScreen(),
       // child: OnboardingPage(),
     );
   }

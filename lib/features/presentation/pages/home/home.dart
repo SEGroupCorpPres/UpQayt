@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
 
   int selectedPageIndex = 0;
   List<Widget> buildBody = <Widget>[
-    HomeScreen(),
+    const HomeScreen(),
     Container(),
     Container(),
     Container(),
