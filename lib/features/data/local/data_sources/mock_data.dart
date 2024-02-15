@@ -123,3 +123,10 @@ List<Map<String, String>> streetList = [
     'tuman': 'Xorazm, Urganch',
   }
 ];
+
+List<Map<String, dynamic>> filterUseful = [
+  {
+    'title': 'Aksiya',
+    'image': Assets.imagesRebateLogo,
+  }
+];

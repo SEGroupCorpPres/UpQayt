@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/data/local/data_sources/deliver_time.dart';
-import 'package:upqayt/features/presentation/widgets/filter_delivery_time_button.dart';
+import 'package:upqayt/features/presentation/widgets/filter/filter_delivery_time_button.dart';
 
 class FilterHeader extends StatefulWidget {
   const FilterHeader({super.key});
@@ -29,7 +29,7 @@ class _FilterHeaderState extends State<FilterHeader> {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.r),
-            color: Colors.white70,
+            color: const Color(0xFFF2F7F3),
           ),
           child: Column(
             children: [

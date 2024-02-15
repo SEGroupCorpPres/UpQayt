@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/presentation/pages/home/home_screen.dart';
 
@@ -11,124 +12,83 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    return Scaffold(
-      backgroundColor: AppColors.scaffoldBGColor,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: AppColors.scaffoldBGColor,
-        elevation: 0,
-        titleSpacing: 0,
-        title: Container(
-          width: size.width,
-          height: kToolbarHeight,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          decoration: const BoxDecoration(
-            color: AppColors.mainColor,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(12),
-              bottomRight: Radius.circular(12),
-            ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: () {},
-                child: const Row(
-                  children: [
-                    Text(
-                      'Joriy manzil',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Icon(
-                      Icons.keyboard_arrow_down_outlined,
-                      color: Colors.white,
-                      size: 25,
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                children: [
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {},
-                    icon: const Icon(
-                      CupertinoIcons.bag,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                  ),
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.notifications_active_outlined,
-                      color: Colors.white,
-                      size: 20,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+    // TODO: implement build
+    return PersistentTabView(
+      context,
+      controller: _controller,
+      screens: _buildScreens(),
+      items: _navBarsItems(),
+      confineInSafeArea: true,
+      backgroundColor: Colors.white,
+      // Default is Colors.white.
+      handleAndroidBackButtonPress: true,
+      // Default is true.
+      resizeToAvoidBottomInset: true,
+      // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+      stateManagement: true,
+      // Default is true.
+      hideNavigationBarWhenKeyboardShows: true,
+      // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+      decoration: NavBarDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        colorBehindNavBar: Colors.white,
       ),
-      body: buildBody[selectedPageIndex],
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-        child: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          selectedItemColor: AppColors.mainColor,
-          unselectedItemColor: AppColors.subtitleColor,
-          type: BottomNavigationBarType.fixed,
-          enableFeedback: false,
-          items: const [
-            BottomNavigationBarItem(
-              label: 'Asosiy',
-              icon: Icon(
-                Icons.home_filled,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: 'Izlash',
-              icon: Icon(
-                CupertinoIcons.search,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: 'Buyurtmalar',
-              icon: Icon(
-                Icons.shopping_basket,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: 'Profil',
-              icon: Icon(CupertinoIcons.person_fill),
-            ),
-          ],
-          currentIndex: selectedPageIndex,
-          onTap: (index) {
-            selectedPageIndex = index;
-            setState(() {});
-          },
-        ),
+      popAllScreensOnTapOfSelectedTab: true,
+      popActionScreens: PopActionScreensType.all,
+      itemAnimationProperties: const ItemAnimationProperties(
+        // Navigation Bar's items animation properties.
+        duration: Duration(milliseconds: 200),
+        curve: Curves.ease,
       ),
+      screenTransitionAnimation: const ScreenTransitionAnimation(
+        // Screen transition animation on change of selected tab.
+        animateTabTransition: true,
+        curve: Curves.ease,
+        duration: Duration(milliseconds: 200),
+      ),
+      navBarStyle: NavBarStyle.style6, // Choose the nav bar style with this property.
     );
   }
 
   int selectedPageIndex = 0;
-  List<Widget> buildBody = <Widget>[
-    const HomeScreen(),
-    Container(),
-    Container(),
-    Container(),
-  ];
+
+  List<Widget> _buildScreens() => [
+        const HomeScreen(),
+        Container(),
+        Container(),
+        Container(),
+      ];
+
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.home),
+        title: "Home",
+        activeColorPrimary: AppColors.mainColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.search),
+        title: "Settings",
+        activeColorPrimary: AppColors.mainColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.bag),
+        title: "Home",
+        activeColorPrimary: AppColors.mainColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(CupertinoIcons.person_fill),
+        title: "Settings",
+        activeColorPrimary: AppColors.mainColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+    ];
+  }
 }

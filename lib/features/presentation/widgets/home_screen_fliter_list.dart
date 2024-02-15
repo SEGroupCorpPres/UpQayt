@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
-import 'package:upqayt/features/presentation/widgets/filter_bottom_sheet.dart';
-import 'package:upqayt/features/presentation/widgets/filter_list_header.dart';
+import 'package:upqayt/features/presentation/widgets/filter/filter_bottom_sheet.dart';
 
 class HomeScreenFilterList extends StatefulWidget {
   const HomeScreenFilterList({super.key});
@@ -14,6 +11,7 @@ class HomeScreenFilterList extends StatefulWidget {
 
 class _HomeScreenFilterListState extends State<HomeScreenFilterList> {
   ScrollController scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -40,41 +38,6 @@ class _HomeScreenFilterListState extends State<HomeScreenFilterList> {
                     return FilterBottomSheet(scrollController: scrollController, context: context, offset: 1);
                   },
                 );
-                // showStickyFlexibleBottomSheet(
-                //   minHeight: 0,
-                //   initHeight: 0.5,
-                //   maxHeight: .9,
-                //   headerHeight: 200,
-                //   context: context,
-                //   bottomSheetColor: Colors.white,
-                //   headerBuilder: (BuildContext context, double offset) {
-                //     return Container(
-                //
-                //     );
-                //   },
-                //   bodyBuilder: (BuildContext context, double offset) {
-                //     return SliverChildListDelegate(
-                //       <Widget>[],
-                //     );
-                //   },
-                //   anchors: [0, 0.5, .9],
-                // );
-                // showFlexibleBottomSheet(
-                //   minHeight: 0,
-                //   initHeight: 0.5,
-                //   maxHeight: 0.9,
-                //   context: context,
-                //   builder: (context, scrollController, bottomSheetOffSet) {
-                //     return FilterBottomSheet(scrollController: scrollController,context: context,offset: 1,);
-                //   },
-                //   anchors: [0, 0.5, 0.8],
-                //   isSafeArea: true,
-                //   bottomSheetBorderRadius: BorderRadius.only(
-                //     topRight: Radius.circular(18.r),
-                //     topLeft: Radius.circular(18.r),
-                //   ),
-                //   draggableScrollableController: DraggableScrollableController(),
-                // );
               }
             },
             child: Container(

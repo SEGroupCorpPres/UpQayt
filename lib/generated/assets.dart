@@ -56,8 +56,6 @@ class Assets {
   static const String iconsSushiIcon2 = 'assets/icons/sushi_icon_2.png';
   static const String iconsTaxi = 'assets/icons/taxi.svg';
   static const String iconsTaxiIcon = 'assets/icons/taxi_icon.png';
-  static const String imagesAction = 'assets/images/action.png';
-  static const String imagesActionLogo = 'assets/images/action_logo.png';
   static const String imagesBigBurger = 'assets/images/big_burger.png';
   static const String imagesBigPizza = 'assets/images/big_pizza.png';
   static const String imagesBurger = 'assets/images/burger.png';
@@ -101,6 +99,8 @@ class Assets {
   static const String imagesPizza = 'assets/images/pizza.png';
   static const String imagesPizza3 = 'assets/images/pizza_3.png';
   static const String imagesQalampirLavash = 'assets/images/qalampir_lavash.png';
+  static const String imagesRebate = 'assets/images/rebate.png';
+  static const String imagesRebateLogo = 'assets/images/rebate_logo.png';
   static const String imagesSous = 'assets/images/sous.png';
   static const String imagesSousHeinz = 'assets/images/sous_heinz.png';
   static const String imagesSushi = 'assets/images/sushi.png';
