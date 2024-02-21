@@ -10,6 +10,7 @@ class Assets {
   static const String assetsSplashLogo = 'assets/splash_logo.png';
   static const String iconsAvocadoIcon = 'assets/icons/avocado_icon.png';
   static const String iconsBag = 'assets/icons/Bag.png';
+  static const String iconsBank = 'assets/icons/bank.png';
   static const String iconsBurgerIcon = 'assets/icons/burger_icon.png';
   static const String iconsCaretRight = 'assets/icons/Caret-Right.png';
   static const String iconsChickenIcon = 'assets/icons/chicken_icon.png';
@@ -101,6 +102,7 @@ class Assets {
   static const String imagesQalampirLavash = 'assets/images/qalampir_lavash.png';
   static const String imagesRebate = 'assets/images/rebate.png';
   static const String imagesRebateLogo = 'assets/images/rebate_logo.png';
+  static const String imagesShoppingBagBg = 'assets/images/shopping_bag_bg.svg';
   static const String imagesSous = 'assets/images/sous.png';
   static const String imagesSousHeinz = 'assets/images/sous_heinz.png';
   static const String imagesSushi = 'assets/images/sushi.png';

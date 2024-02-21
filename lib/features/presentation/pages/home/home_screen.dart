@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:upqayt/core/colors.dart';
-import 'package:upqayt/features/presentation/widgets/home_screen_restaurants.dart';
-import 'package:upqayt/features/presentation/widgets/home_screen_top_products.dart';
+import 'package:upqayt/features/presentation/pages/shopping_bag/shopping_bag_screen.dart';
+import 'package:upqayt/features/presentation/widgets/home_screen/home_screen_top_products.dart';
+import 'package:upqayt/features/presentation/widgets/home_screen/home_screen_restaurants.dart';
 import 'package:upqayt/features/presentation/widgets/rebate_widget.dart';
 import 'package:upqayt/features/presentation/widgets/search_field.dart';
 
@@ -64,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       IconButton(
                         padding: EdgeInsets.zero,
-                        onPressed: () {},
+                        onPressed: () => pushNewScreen(context, screen: ShoppingBagScreen(), withNavBar: false),
                         icon: const Icon(
                           CupertinoIcons.bag,
                           color: Colors.white,

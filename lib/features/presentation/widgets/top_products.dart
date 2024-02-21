@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
 
 class TopProducts extends StatelessWidget {
-  final int index;
+  final int? index;
   final String title;
   final String subtitle;
   final String image;
@@ -14,7 +14,7 @@ class TopProducts extends StatelessWidget {
 
   const TopProducts({
     super.key,
-    required this.index,
+    this.index,
     required this.title,
     required this.subtitle,
     required this.image,
@@ -26,8 +26,8 @@ class TopProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: index == 1 ? 0 : 16),
+    return SizedBox(
+      width: size.width / 2 - 30,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

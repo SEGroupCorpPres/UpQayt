@@ -1,5 +1,8 @@
 import 'package:upqayt/generated/assets.dart';
 
+import '../models/category_menu.dart';
+import '../models/food_category.dart';
+
 List<Map<String, String?>> topProduct = [
   {
     'title': 'Chopar pizza',
@@ -50,9 +53,31 @@ List<Map<String, String?>> topProduct = [
     'rebate': '-5%',
   },
 ];
+List<Map<String, String>> categories = [
+  {'title': 'Pizza', 'image': Assets.imagesChoparPizza},
+  {'title': 'Burger', 'image': Assets.imagesBurger},
+  {'title': 'Lavash', 'image': Assets.imagesLavash},
+  {'title': 'Sushi', 'image': Assets.imagesSushi},
+  {'title': 'Hod dog', 'image': Assets.imagesHodDog},
+  {'title': 'KFC', 'image': Assets.imagesKfc},
+  {'title': 'Butterbrot', 'image': Assets.imagesButterbrot},
+  {'title': 'Free', 'image': Assets.imagesFreeAndSous},
+];
 
 List<Map<String, String>> filterCategory = [
   {'title': 'Filter', 'icon': Assets.iconsFilterIcon},
+  {'title': 'Pizza', 'icon': Assets.iconsSlicePizzaIcon2},
+  {'title': 'Burger', 'icon': Assets.iconsBurgerIcon},
+  {'title': 'Hod dog', 'icon': Assets.iconsHodDogIcon2},
+  {'title': 'Coke Cola', 'icon': Assets.iconsCokeIcon},
+  {'title': 'Free', 'icon': Assets.iconsFreeIcon},
+  {'title': 'Lavash', 'icon': Assets.iconsLavashIcon},
+  {'title': 'Sho\'rva', 'icon': Assets.iconsSoupIcon},
+  {'title': 'Tovuq', 'icon': Assets.iconsChickenIcon},
+  {'title': 'Tuxum', 'icon': Assets.iconsEggIcon},
+];
+List<Map<String, String>> foodCategory = [
+  {'title': 'Aksiya', 'icon': Assets.imagesRebateLogo},
   {'title': 'Pizza', 'icon': Assets.iconsSlicePizzaIcon2},
   {'title': 'Burger', 'icon': Assets.iconsBurgerIcon},
   {'title': 'Hod dog', 'icon': Assets.iconsHodDogIcon2},
@@ -129,4 +154,149 @@ List<Map<String, dynamic>> filterUseful = [
     'title': 'Aksiya',
     'image': Assets.imagesRebateLogo,
   }
+];
+final List<CategoryMenu> category = [
+  CategoryMenu(
+    category: 'rebate',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000, rebatePrice: 23000, rebate: 15),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000, rebatePrice: 20000, rebate: 15),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000, rebatePrice: 36000, rebate: 15),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000, rebatePrice: 27000, rebate: 15),
+    ],
+  ),
+  CategoryMenu(
+    category: 'pizza',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Mix Pizza', image: Assets.imagesMixPizza, price: 12000),
+      Category(title: 'Nostalgiya Pizza', image: Assets.imagesMixPizza, price: 18000),
+      Category(title: 'Pepperoni pizza', image: Assets.imagesBigBurger, price: 25000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'burger',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'hoddog',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'free',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'lavash',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'soup',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'chicken',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'chicken',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+  CategoryMenu(
+    category: 'chicken',
+    items: [
+      Category(title: 'Chopar pizza', image: Assets.imagesPizza, price: 30000),
+      Category(title: 'Butterbrot', image: Assets.imagesButterbrot, price: 30000),
+      Category(title: 'Nostalgiya Burger', image: Assets.imagesNostalgiaBurger, price: 49000),
+      Category(title: 'Chopar pizza', image: Assets.imagesBigBurger, price: 40000),
+    ],
+  ),
+];
+
+List<Map<String, dynamic>>? shoppingBagProductList = [
+  {
+    'restoran_name': 'Gold burger',
+    'products': [
+      {
+        'category': 'burger',
+        'name': 'King burger',
+        'image': Assets.imagesBigBurger,
+        'quantity': 3,
+        'price': 13000,
+        'total_price': 39000,
+      },
+      {
+        'category': 'pizza',
+        'name': 'Pepperoni pizza',
+        'image': Assets.imagesPepperoniPizza,
+        'quantity': 2,
+        'price': 66000,
+        'total_price': 132000,
+      },
+      {
+        'category': 'drink',
+        'name': 'Coke-cola',
+        'image': Assets.imagesCola025,
+        'quantity': 4,
+        'price': 7000,
+        'total_price': 28000,
+      },
+    ]
+  },
+  {
+    'restoran_name': 'Navro\'z Restaurant',
+    'products': [
+      {
+        'category': 'kfc',
+        'name': 'KFC',
+        'image': Assets.imagesKfc2,
+        'quantity': 4,
+        'price': 40000,
+        'total_price': 120000,
+      },
+      {
+        'category': 'lavash',
+        'name': 'Lavash',
+        'image': Assets.imagesLavash,
+        'quantity': 8,
+        'price': 30000,
+        'total_price': 240000,
+      },
+    ]
+  },
 ];

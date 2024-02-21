@@ -34,7 +34,7 @@ class _YandexMapScreenState extends State<YandexMapScreen> {
           ? null
           : AppBar(
               automaticallyImplyLeading: false,
-              title: Text('Tinchlik ko‘chasi, 6'),
+              title: const Text('Tinchlik ko‘chasi, 6'),
               centerTitle: false,
               elevation: 1,
               shadowColor: Colors.grey,
@@ -49,7 +49,7 @@ class _YandexMapScreenState extends State<YandexMapScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   isPressed
-                      ? Row(
+                      ? const Row(
                           children: [
                             HighLightedButton(icon: Icons.arrow_back_ios_new),
                           ],

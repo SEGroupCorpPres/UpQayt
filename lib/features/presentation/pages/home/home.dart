@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/presentation/pages/home/home_screen.dart';
+import 'package:upqayt/features/presentation/pages/orders/order_screen.dart';
+import 'package:upqayt/features/presentation/pages/profile.dart';
+import 'package:upqayt/features/presentation/pages/search/search_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+  final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -58,34 +61,34 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> _buildScreens() => [
         const HomeScreen(),
-        Container(),
-        Container(),
-        Container(),
+        const SearchScreen(),
+        const OrderScreen(),
+        const ProfileScreen(),
       ];
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.home),
-        title: "Home",
+        title: "Asosiy",
         activeColorPrimary: AppColors.mainColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.search),
-        title: "Settings",
+        title: "Izlash",
         activeColorPrimary: AppColors.mainColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.bag),
-        title: "Home",
+        title: "Buyurtmalar",
         activeColorPrimary: AppColors.mainColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.person_fill),
-        title: "Settings",
+        title: "Profil",
         activeColorPrimary: AppColors.mainColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

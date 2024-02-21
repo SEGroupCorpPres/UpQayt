@@ -6,14 +6,14 @@ import 'package:upqayt/core/widgets/main_button.dart';
 import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
 import 'package:upqayt/features/presentation/widgets/search_field.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+class LocationSearchScreen extends StatefulWidget {
+  const LocationSearchScreen({super.key});
 
   @override
-  State<SearchScreen> createState() => _SearchScreenState();
+  State<LocationSearchScreen> createState() => _LocationSearchScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _LocationSearchScreenState extends State<LocationSearchScreen> {
   TextEditingController searchController = TextEditingController();
 
   @override
