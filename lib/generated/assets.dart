@@ -3,6 +3,8 @@ class Assets {
   Assets._();
 
   static const String assetsBackground = 'assets/background.png';
+  static const String assetsIconsBox = 'assets/icons/box.svg';
+  static const String assetsIconsMoney = 'assets/icons/money.svg';
   static const String assetsImagesOnboarding1 = 'assets/images/onboarding_1.svg';
   static const String assetsImagesOnboarding2 = 'assets/images/onboarding_2.svg';
   static const String assetsImagesOnboarding3 = 'assets/images/onboarding_3.svg';
@@ -11,6 +13,7 @@ class Assets {
   static const String iconsAvocadoIcon = 'assets/icons/avocado_icon.png';
   static const String iconsBag = 'assets/icons/Bag.png';
   static const String iconsBank = 'assets/icons/bank.png';
+  static const String iconsBox = 'assets/icons/box.png';
   static const String iconsBurgerIcon = 'assets/icons/burger_icon.png';
   static const String iconsCaretRight = 'assets/icons/Caret-Right.png';
   static const String iconsChickenIcon = 'assets/icons/chicken_icon.png';
@@ -45,6 +48,7 @@ class Assets {
   static const String iconsLocation = 'assets/icons/location.svg';
   static const String iconsLocationIcon = 'assets/icons/location_icon.png';
   static const String iconsMixFoodIcon = 'assets/icons/mix_food_icon.png';
+  static const String iconsMoney = 'assets/icons/money.png';
   static const String iconsNotificationsOn = 'assets/icons/Notifications-On.png';
   static const String iconsPancakeIcon = 'assets/icons/pancake_icon.png';
   static const String iconsPepper = 'assets/icons/pepper.png';

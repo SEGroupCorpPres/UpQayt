@@ -13,7 +13,7 @@ class ProdCancelBtn extends StatelessWidget {
         InkWell(
           onTap: onTap,
           child: const Icon(
-            Icons.cancel,
+            Icons.cancel_outlined,
             color: CupertinoColors.destructiveRed,
           ),
         ),

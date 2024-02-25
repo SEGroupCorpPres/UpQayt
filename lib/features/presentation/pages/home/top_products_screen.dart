@@ -62,7 +62,6 @@ class _TopProductsScreenState extends State<TopProductsScreen> {
                 ),
               ),
               Container(
-                // height: size.height - kToolbarHeight.h - kBottomNavigationBarHeight.h - 70.h,
                 padding: const EdgeInsets.symmetric(horizontal: 20).r,
                 width: size.width,
                 child: SingleChildScrollView(

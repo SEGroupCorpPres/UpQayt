@@ -27,10 +27,10 @@ class App extends StatelessWidget {
           home: child,
         );
       },
-      // child: HomePage(),
+      child: HomePage(),
       // child: TopProductsScreen(),
       // child: RestaurantDetailScreen(),
-      child: ShoppingBagScreen(),
+      // child: ShoppingBagScreen(),
       // child: IntroScreen(),
       // child: SplashScreen(),
       // child: YandexMapScreen(),

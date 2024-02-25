@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
 
 class ShoppingBagAppBar extends StatelessWidget {
-  const ShoppingBagAppBar({super.key});
+  const ShoppingBagAppBar({super.key, this.onTapTrash});
+
+  final VoidCallback? onTapTrash;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class ShoppingBagAppBar extends StatelessWidget {
           ),
           shoppingBagProductList!.isNotEmpty
               ? IconButton(
-                  onPressed: () {},
+                  onPressed: onTapTrash,
                   icon: Icon(
                     CupertinoIcons.trash,
                     size: 19.sp,
