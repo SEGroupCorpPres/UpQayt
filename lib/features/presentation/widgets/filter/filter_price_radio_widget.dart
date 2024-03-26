@@ -10,6 +10,8 @@ class FilterPriceRadioWidget<T> extends StatelessWidget {
   final String title;
   final MainAxisAlignment mainAxisAlignment;
   final double padding;
+  final double margin;
+
 
   const FilterPriceRadioWidget({
     super.key,
@@ -21,6 +23,7 @@ class FilterPriceRadioWidget<T> extends StatelessWidget {
     required this.title,
     this.mainAxisAlignment = MainAxisAlignment.center,
     this.padding = 0,
+    this.margin = 0,
   });
 
   @override
@@ -30,31 +33,17 @@ class FilterPriceRadioWidget<T> extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.r),
         color: const Color(0xFFF2F4F7),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 5.w),
       padding: EdgeInsets.symmetric(horizontal: padding),
-      width: width,
-      height: 35.h,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: mainAxisAlignment,
-        children: [
-          Radio.adaptive(
-            value: value,
-            activeColor: activeColor,
-            splashRadius: 10,
-            hoverColor: Colors.transparent,
-            toggleable: true,
-            groupValue: groupValue,
-            onChanged: onChanged,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 5.w),
-            child: Text(
-              title,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ),
-        ],
+      margin: EdgeInsets.symmetric(horizontal: margin),
+      height: 33.h,
+      child: RadioMenuButton(
+        value: value,
+        groupValue: groupValue,
+        onChanged: onChanged,
+        child: Text(
+          title,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
       ),
     );
   }

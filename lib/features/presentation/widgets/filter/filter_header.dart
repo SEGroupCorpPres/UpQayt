@@ -29,7 +29,7 @@ class _FilterHeaderState extends State<FilterHeader> {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.r),
-            color: const Color(0xFFF2F7F3),
+            color: Colors.white,
           ),
           child: Column(
             children: [
@@ -44,16 +44,17 @@ class _FilterHeaderState extends State<FilterHeader> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color(0xFF8999A6).withOpacity(.2),
+                        color: const Color(0xFF8999A6).withOpacity(.2),
                       ),
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       width: 60.w,
                       height: 30.h,
                       child: Center(
-                          child: Text(
-                        'Tozalash',
-                        style: Theme.of(context).textTheme.titleSmall,
-                      )),
+                        child: Text(
+                          'Tozalash',
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -65,7 +66,7 @@ class _FilterHeaderState extends State<FilterHeader> {
                 height: 35.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  color: Color(0xFF8999A6).withOpacity(.2),
+                  color: const Color(0xFF8999A6).withOpacity(.2),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

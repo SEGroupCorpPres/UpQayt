@@ -18,13 +18,16 @@ class RestaurantDetailScreen extends StatefulWidget {
 
 class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
   ScrollController scrollController = ScrollController();
+   double position = 0;
   int selectedCategoryIndex = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     scrollController.addListener(() {
-      print(scrollController.offset);
+      // print(scrollController.offset);
+      position = scrollController.offset;
+      print(position);
     });
     super.initState();
   }
@@ -32,6 +35,7 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
   @override
   void dispose() {
     // TODO: implement dispose
+    scrollController.dispose();
     super.dispose();
   }
 
@@ -81,7 +85,7 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                   ),
                   centerTitle: false,
                   titlePadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                  title: Row(
+                  title:  position >= 153.0 ? Container() : Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(

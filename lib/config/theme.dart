@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +7,12 @@ class AppTheme {
   ThemeData get lightThemeData => _lightThemeData();
   ThemeData _lightThemeData() {
     return ThemeData(
+
+      brightness: Brightness.light,
       useMaterial3: true,
+      cupertinoOverrideTheme: CupertinoThemeData(
+        brightness: Brightness.light,
+      ),
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       textTheme: TextTheme(
         labelLarge: whiteColorTextStyleWithGoogleFonts(20),

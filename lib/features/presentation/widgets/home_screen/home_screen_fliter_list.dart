@@ -34,8 +34,9 @@ class _HomeScreenFilterListState extends State<HomeScreenFilterList> {
                   clipBehavior: Clip.hardEdge,
                   scrollControlDisabledMaxHeightRatio: size.height - kToolbarHeight - kTextTabBarHeight,
                   anchorPoint: Offset(0, .8),
+                  useSafeArea: true,
                   builder: (context) {
-                    return FilterBottomSheet(scrollController: scrollController, context: context, offset: 1);
+                    return FilterBottomSheet(scrollController: scrollController, context: context, offset: .8);
                   },
                 );
               }

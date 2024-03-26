@@ -42,29 +42,30 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 
-    return ListView(
-      controller: scrollController,
-      shrinkWrap: true,
-      children: [
-        const FilterHeader(),
-        const FilterPriceRange(),
-        const FilterUseful(),
-        const FilterFoodCategory(),
-        const FilterPriceCategory(),
-        Container(
-          width: size.width,
-          // height: 60.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
-            color: Colors.white,
+    return Container(
+      height: size.height * .73,
+      child: ListView(
+        controller: scrollController,
+        shrinkWrap: true,
+        children: [
+          const FilterHeader(),
+          const FilterPriceRange(),
+          const FilterUseful(),
+          const FilterFoodCategory(),
+          const FilterPriceCategory(),
+          Container(
+            width: size.width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
+              color: Colors.white,
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+              child: MainButton(title: 'Topilganlarni ko\'rsatish', onTap: () => Navigator.pop(context)),
+            ),
           ),
-          // padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-            child: MainButton(title: 'Topilganlarni ko\'rsatish', onTap: () => Navigator.pop(context)),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

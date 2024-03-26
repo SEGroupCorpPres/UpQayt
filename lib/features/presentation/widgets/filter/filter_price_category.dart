@@ -48,7 +48,7 @@ class _FilterPriceCategoryState extends State<FilterPriceCategory> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       FilterPriceRadioWidget(
-                        width: 100.w,
+                        width: 107.w,
                         value: PriceCategory.expensive,
                         activeColor: AppColors.mainColor,
                         groupValue: _priceCategory,
@@ -59,8 +59,9 @@ class _FilterPriceCategoryState extends State<FilterPriceCategory> {
                         },
                       ),
                       FilterPriceRadioWidget(
-                        width: 100.w,
+                        width: 107.w,
                         value: PriceCategory.average,
+                        margin: 1.w,
                         activeColor: AppColors.mainColor,
                         groupValue: _priceCategory,
                         title: priceCategory[1]['value']!,
@@ -85,7 +86,6 @@ class _FilterPriceCategoryState extends State<FilterPriceCategory> {
                   SizedBox(height: 5.h),
                   FilterPriceRadioWidget(
                     width: size.width,
-                    padding: 10.w,
                     value: PriceCategory.rating,
                     activeColor: AppColors.mainColor,
                     groupValue: _priceCategory,
@@ -99,7 +99,6 @@ class _FilterPriceCategoryState extends State<FilterPriceCategory> {
                   SizedBox(height: 5.h),
                   FilterPriceRadioWidget(
                     width: size.width,
-                    padding: 10.w,
                     value: PriceCategory.fast,
                     mainAxisAlignment: MainAxisAlignment.start,
                     activeColor: AppColors.mainColor,

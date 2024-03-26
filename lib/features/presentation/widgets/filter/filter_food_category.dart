@@ -44,29 +44,27 @@ class FilterFoodCategory extends StatelessWidget {
                               color: const Color(0xFFF2F4F7),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9).r),
                             ),
-                            child: Expanded(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SizedBox(
-                                    width: 25.sp,
-                                    height: 20.sp,
-                                    child: Image.asset(
-                                      category['icon']!,
-                                      fit: BoxFit.cover,
-                                    ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(
+                                  width: 25.sp,
+                                  height: 20.sp,
+                                  child: Image.asset(
+                                    category['icon']!,
+                                    fit: BoxFit.cover,
                                   ),
-                                  const SizedBox(width: 10),
-                                  Text(
-                                    category['title']!,
-                                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                                          color: Colors.black87,
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                                const SizedBox(width: 10),
+                                Text(
+                                  category['title']!,
+                                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                                        color: Colors.black87,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                              ],
                             ),
                           ),
                 ],

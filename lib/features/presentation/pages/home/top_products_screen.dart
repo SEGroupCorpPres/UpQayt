@@ -26,9 +26,7 @@ class _TopProductsScreenState extends State<TopProductsScreen> {
     return Material(
       color: AppColors.scaffoldBGColor,
       child: SafeArea(
-        bottom: true,
         child: SizedBox(
-          // height: size.height,
           width: size.width,
           child: Column(
             children: [
@@ -64,6 +62,7 @@ class _TopProductsScreenState extends State<TopProductsScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20).r,
                 width: size.width,
+                height: size.height - 2 * kToolbarHeight - kBottomNavigationBarHeight - 40.h,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [

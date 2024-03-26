@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/app/presentation/widgets/onboarding_text_list.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
+import 'package:upqayt/features/presentation/pages/map/map_screen.dart';
 import 'package:upqayt/generated/assets.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -95,7 +96,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           context,
                           Platform.isIOS
                               ? CupertinoPageRoute(
-                                  builder: (_) => const HomePage(),
+                                  builder: (_) => const YandexMapScreen(),
                                 )
                               : MaterialPageRoute(
                                   builder: (_) => const HomePage(),
@@ -159,7 +160,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   child: TextButton(
                     onPressed: () => Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (_) => HomePage()),
+                      MaterialPageRoute(builder: (_) => YandexMapScreen()),
                       (route) => false,
                     ),
                     child: Text(

@@ -29,7 +29,7 @@ class _FilterPriceRangeState extends State<FilterPriceRange> {
         Container(
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.r), color: Colors.white),
           width: size.width,
-          height: 140.h,
+          height: 141.h,
           child: Column(
             children: [
               SizedBox(

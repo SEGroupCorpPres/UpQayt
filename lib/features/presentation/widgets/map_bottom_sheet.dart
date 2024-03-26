@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/core/widgets/main_button.dart';
+import 'package:upqayt/features/presentation/pages/home/home.dart';
 import 'package:upqayt/features/presentation/widgets/search_field.dart';
 
 Widget buildBottomSheet(
@@ -124,7 +125,14 @@ Widget buildBottomSheet(
         ),
       ),
       SizedBox(height: 10.h),
-      MainButton(title: 'Manzilni Saqlash', onTap: () {}),
+      MainButton(
+        title: 'Manzilni Saqlash',
+        onTap: () => Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (_) => HomePage()),
+          (route) => false,
+        ),
+      ),
     ],
   );
 }

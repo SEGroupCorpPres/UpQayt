@@ -88,7 +88,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ),
               Container(
-                // height: size.height - kToolbarHeight.h - kBottomNavigationBarHeight.h - 70,
+                height: size.height - 2* kToolbarHeight.h - kBottomNavigationBarHeight.h - 1,
                 width: size.width,
                 padding: const EdgeInsets.symmetric(horizontal: 20).r,
                 child: SingleChildScrollView(
