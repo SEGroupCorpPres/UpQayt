@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
+import 'package:upqayt/core/widgets/main_button.dart';
 import 'package:upqayt/features/presentation/widgets/shopping_bag/app_bar.dart';
 import 'package:upqayt/features/presentation/widgets/shopping_bag/body.dart';
 import 'package:upqayt/features/presentation/widgets/shopping_bag/clear_trash_alert_dialog.dart';
@@ -35,7 +37,6 @@ class _ShoppingBagScreenState extends State<ShoppingBagScreen> with SingleTicker
     return Scaffold(
       backgroundColor: AppColors.mainBGColor,
       body: SafeArea(
-        bottom: false,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -53,26 +54,27 @@ class _ShoppingBagScreenState extends State<ShoppingBagScreen> with SingleTicker
           ],
         ),
       ),
-      // bottomSheet: DraggableScrollableSheet(
-      //   maxChildSize: .3,
-      //   expand: false,
-      //   // snap: true,
-      //   minChildSize: .1,
-      //   initialChildSize: .1,
-      //   controller: DraggableScrollableController(),
-      //   builder: (context, dragController) {
-      //     return Container(
-      //       padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
-      //       width: MediaQuery.sizeOf(context).width,
-      //       // color: Colors.white,
-      //       child: SingleChildScrollView(
-      //         child: MainButton(title: 'Buyurtma berish', onTap: () {}),
-      //         controller: dragController,
-      //       ),
-      //     );
-      //   },
-      // ),
-      bottomSheet: const ShoppingBagBottomSheet(),
+      bottomSheet: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30).r,
+        child: MainButton(
+          title: 'Buyurtma berish',
+          onTap: () {
+            showModalBottomSheet(
+              context: context,
+              showDragHandle: true,
+              backgroundColor: Colors.white,
+              isScrollControlled: true,
+              enableDrag: true,
+              clipBehavior: Clip.hardEdge,
+              anchorPoint: const Offset(0, .8),
+              useSafeArea: true,
+              builder: (context) {
+                return const ShoppingBagBottomSheet();
+              },
+            );
+          },
+        ),
+      ),
     );
   }
 }

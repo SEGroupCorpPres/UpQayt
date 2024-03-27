@@ -306,55 +306,32 @@ final List<CategoryMenu> category = [
   ),
 ];
 
-List<Map<String, dynamic>>? shoppingBagProductList = [
-  {
-    'restoran_name': 'Gold burger',
-    'products': [
-      {
-        'category': 'burger',
-        'name': 'King burger',
-        'image': Assets.imagesBigBurger,
-        'quantity': 3,
-        'price': 13000,
-        'total_price': 39000,
-      },
-      {
-        'category': 'pizza',
-        'name': 'Pepperoni pizza',
-        'image': Assets.imagesPepperoniPizza,
-        'quantity': 2,
-        'price': 66000,
-        'total_price': 132000,
-      },
-      {
-        'category': 'drink',
-        'name': 'Coke-cola',
-        'image': Assets.imagesCola025,
-        'quantity': 4,
-        'price': 7000,
-        'total_price': 28000,
-      },
-    ]
-  },
-  {
-    'restoran_name': 'Navro\'z Restaurant',
-    'products': [
-      {
-        'category': 'kfc',
-        'name': 'KFC',
-        'image': Assets.imagesKfc2,
-        'quantity': 4,
-        'price': 40000,
-        'total_price': 120000,
-      },
-      {
-        'category': 'lavash',
-        'name': 'Lavash',
-        'image': Assets.imagesLavash,
-        'quantity': 8,
-        'price': 30000,
-        'total_price': 240000,
-      },
-    ]
-  },
-];
+Map<String, dynamic>? shoppingBagProductList = {
+  'restoran_name': 'Gold burger',
+  'products': [
+    {
+      'category': 'burger',
+      'name': 'King burger',
+      'image': Assets.imagesBigBurger,
+      'quantity': 3,
+      'price': 13000,
+      'total_price': 39000,
+    },
+    {
+      'category': 'pizza',
+      'name': 'Pepperoni pizza',
+      'image': Assets.imagesPepperoniPizza,
+      'quantity': 2,
+      'price': 66000,
+      'total_price': 132000,
+    },
+    {
+      'category': 'drink',
+      'name': 'Coke-cola',
+      'image': Assets.imagesCola025,
+      'quantity': 4,
+      'price': 7000,
+      'total_price': 28000,
+    },
+  ]
+};

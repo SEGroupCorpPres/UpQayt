@@ -20,19 +20,13 @@ class _RestaurantListState extends State<RestaurantList> {
     final size = MediaQuery.sizeOf(context);
     return SizedBox(
       height: MediaQuery.sizeOf(context).height - 2 * kToolbarHeight,
-      child: ListView.builder(
-        shrinkWrap: true,
-        controller: _scrollController,
-        itemCount: shoppingBagProductList!.length,
-        itemBuilder: (context, restaurant) {
-          print(shoppingBagProductList!.toList());
-          return Column(
+      child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              RestaurantName(restaurant: restaurant),
+              const RestaurantName(),
               SizedBox(height: 10.h),
-              ProductList(restaurant: restaurant),
+              const ProductList(),
               SizedBox(height: 10.h),
               Divider(
                 endIndent: 20.w,
@@ -41,8 +35,6 @@ class _RestaurantListState extends State<RestaurantList> {
               ),
               SizedBox(height: 10.h),
             ],
-          );
-        },
       ),
     );
   }

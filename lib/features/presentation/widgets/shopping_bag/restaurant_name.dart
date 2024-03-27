@@ -4,9 +4,8 @@ import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
 import 'package:upqayt/generated/assets.dart';
 
 class RestaurantName extends StatelessWidget {
-  const RestaurantName({super.key, required this.restaurant});
+  const RestaurantName({super.key});
 
-  final int restaurant;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class RestaurantName extends StatelessWidget {
             Image.asset(Assets.iconsBank),
             SizedBox(width: 10.w),
             Text(
-              shoppingBagProductList![restaurant]['restoran_name'],
+              shoppingBagProductList!['restoran_name'],
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.start,
             ),

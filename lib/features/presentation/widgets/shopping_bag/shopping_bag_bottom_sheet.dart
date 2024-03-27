@@ -32,40 +32,32 @@ class _ShoppingBagBottomSheetState extends State<ShoppingBagBottomSheet> with Si
 
   @override
   Widget build(BuildContext context) {
-    return BottomSheet(
-      animationController: bottomSheetController,
-      showDragHandle: true,
-      onDragStart: (details) {},
-      onClosing: () {},
-      builder: (context) {
-        return Container(
-          padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
-          width: MediaQuery.sizeOf(context).width,
-          height: 210.h,
-          // color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Buyurtma miqdori',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              SizedBox(height: 10.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: const Column(
-                  children: [
-                    OrderBottomSheetPrice(image: Assets.iconsBox, title: 'Maxsulot narxi', price: '300000'),
-                    OrderBottomSheetPrice(image: Assets.iconsTaxiIcon, title: 'Yetkazish narxi', price: '20000'),
-                    OrderBottomSheetPrice(image: Assets.iconsMoney, title: 'Umumiy summa', titleColor: Colors.black, price: '320000'),
-                  ],
-                ),
-              ),
-              MainButton(title: 'Buyurtma berish', onTap: () {}),
-            ],
+    return Container(
+      padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 20.h),
+      width: MediaQuery.sizeOf(context).width,
+      height: 210.h,
+      // color: Colors.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Buyurtma miqdori',
+            style: Theme.of(context).textTheme.titleMedium,
           ),
-        );
-      },
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: const Column(
+              children: [
+                OrderBottomSheetPrice(image: Assets.iconsBox, title: 'Maxsulot narxi', price: '300000'),
+                OrderBottomSheetPrice(image: Assets.iconsTaxiIcon, title: 'Yetkazish narxi', price: '20000'),
+                OrderBottomSheetPrice(image: Assets.iconsMoney, title: 'Umumiy summa', titleColor: Colors.black, price: '320000'),
+              ],
+            ),
+          ),
+          MainButton(title: 'Buyurtma berish', onTap: () {}),
+        ],
+      ),
     );
   }
 }
