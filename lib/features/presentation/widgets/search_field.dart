@@ -17,6 +17,8 @@ class SearchField extends StatelessWidget {
   final double contentPaddingVertically;
   final TextStyle hintStyle;
   final TextEditingController controller;
+  final ValueChanged<String>? onChanged;
+  final VoidCallback? onPressedSuffixIcon;
 
   const SearchField({
     super.key,
@@ -30,20 +32,21 @@ class SearchField extends StatelessWidget {
     this.bgColor = Colors.white,
     required this.width,
     this.contentPaddingHorizontally = 25,
-    this.contentPaddingVertically = 10, required this.hintStyle, required this.controller
+    this.contentPaddingVertically = 10, required this.hintStyle, required this.controller,
+    this.onChanged, this.onPressedSuffixIcon,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: 40.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10).r,
         color: bgColor,
       ),
       margin: margin.r,
       child: TextField(
+        onChanged: onChanged,
         controller: controller,
         decoration: InputDecoration(
           border: InputBorder.none,
@@ -54,8 +57,9 @@ class SearchField extends StatelessWidget {
           ) : null,
           hintText: hintText,
           hintStyle: hintStyle,
-          suffixIcon: suffixIcon != null ? Icon(
-            suffixIcon,
+          suffixIcon: suffixIcon != null ? IconButton(
+            onPressed: onPressedSuffixIcon,
+            icon: Icon(suffixIcon),
             color: prefixIconColor,
           ) : null,
         ),

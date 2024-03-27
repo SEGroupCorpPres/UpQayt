@@ -33,7 +33,7 @@ class _HomeScreenFilterListState extends State<HomeScreenFilterList> {
                   enableDrag: true,
                   clipBehavior: Clip.hardEdge,
                   scrollControlDisabledMaxHeightRatio: size.height - kToolbarHeight - kTextTabBarHeight,
-                  anchorPoint: Offset(0, .8),
+                  anchorPoint: const Offset(0, .8),
                   useSafeArea: true,
                   builder: (context) {
                     return FilterBottomSheet(scrollController: scrollController, context: context, offset: .8);

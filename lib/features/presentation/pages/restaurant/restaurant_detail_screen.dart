@@ -122,10 +122,7 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
                   ),
                 ),
                 leading: IconButton(
-                  onPressed: () => Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (_) => HomePage()),
-                  ),
+                  onPressed: () => Navigator.pop(context),
                   icon: CircleAvatar(
                     backgroundColor: Colors.white,
                     child: Icon(
