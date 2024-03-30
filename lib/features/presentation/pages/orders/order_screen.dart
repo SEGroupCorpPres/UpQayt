@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
+import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
+import 'package:upqayt/features/presentation/widgets/order/order.dart';
+import 'package:upqayt/features/presentation/widgets/order/order_list.dart';
+import 'package:upqayt/features/presentation/widgets/order/order_status.dart';
+import 'package:upqayt/features/presentation/widgets/order/order_status_list.dart';
 import 'package:upqayt/features/presentation/widgets/order/order_tab.dart';
 
 class OrderScreen extends StatefulWidget {
@@ -12,12 +17,13 @@ class OrderScreen extends StatefulWidget {
 
 class _OrderScreenState extends State<OrderScreen> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int initialIndex = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 2, vsync: this, initialIndex: initialIndex);
   }
 
   @override
@@ -92,13 +98,13 @@ class _OrderScreenState extends State<OrderScreen> with SingleTickerProviderStat
               ),
             ),
             SizedBox(
-              height: 300,
+              height: ScreenUtil.defaultSize.height - kBottomNavigationBarHeight,
               width: MediaQuery.sizeOf(context).width,
               child: TabBarView(
                 controller: _tabController,
-                children: [
-                  Text('Faol buyurtmalar'),
-                  Text('Faol buyurtmalar'),
+                children: const [
+                  OrderStatusList(),
+                  OrderList(),
                 ],
               ),
             ),

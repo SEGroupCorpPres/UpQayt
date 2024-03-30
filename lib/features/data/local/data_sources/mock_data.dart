@@ -1,3 +1,4 @@
+import 'package:upqayt/features/data/local/models/status.dart';
 import 'package:upqayt/generated/assets.dart';
 
 import '../models/category_menu.dart';
@@ -335,3 +336,30 @@ Map<String, dynamic>? shoppingBagProductList = {
     },
   ]
 };
+
+List<Map<String, dynamic>> orderList = [
+  {
+    'id': '123456',
+    'restaurant_name': 'Burger King',
+    'restaurant_image': Assets.imagesBurgerKingLogo,
+    'created': DateTime(2024, 6, 5, 14, 53),
+    'status': OrderStatus.delivered,
+    'products': [
+      Assets.imagesBurger2,
+      Assets.imagesBurger3,
+      Assets.imagesBurger4,
+      Assets.imagesBurger5,
+    ],
+  },
+  {
+    'id': '234567',
+    'restaurant_name': 'Max Food',
+    'restaurant_image': Assets.imagesMaxFoodLogo,
+    'created': DateTime(2024, 6, 5, 14, 56),
+    'status': OrderStatus.canceled,
+    'products': [
+      Assets.imagesBurger2,
+      Assets.imagesBurger3,
+    ],
+  },
+];
