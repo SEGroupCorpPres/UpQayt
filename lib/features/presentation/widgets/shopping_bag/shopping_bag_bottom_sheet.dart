@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:upqayt/core/widgets/main_button.dart';
 import 'package:upqayt/features/presentation/widgets/shopping_bag/order_bottom_sheet_price.dart';
 import 'package:upqayt/generated/assets.dart';

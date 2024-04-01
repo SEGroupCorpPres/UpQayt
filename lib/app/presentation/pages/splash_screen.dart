@@ -82,8 +82,8 @@ class _SplashScreenState extends State<SplashScreen> with WidgetsBindingObserver
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        right: false,
         child: Container(
+          height: MediaQuery.sizeOf(context).height,
           width: MediaQuery.sizeOf(context).width,
           color: AppColors.mainColor,
           child: Stack(

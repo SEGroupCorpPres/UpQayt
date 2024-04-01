@@ -47,7 +47,7 @@ class ProductListTile extends StatelessWidget {
                       iconColor: Colors.white,
                     )
                   ],
-                )
+                ),
               ],
             ),
           ),

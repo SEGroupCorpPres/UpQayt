@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderBottomSheetPrice extends StatelessWidget {
-  const OrderBottomSheetPrice({super.key, required this.image, required this.title, this.titleColor = Colors.black54, required this.price});
+  const OrderBottomSheetPrice({
+    super.key,
+    required this.image,
+    required this.title,
+    this.titleColor = Colors.black54,
+    required this.price,
+  });
 
   final String image;
   final String title;
@@ -14,7 +20,10 @@ class OrderBottomSheetPrice extends StatelessWidget {
     return ListTile(
       dense: true,
       // minLeadingWidth: 0,
-      leading: Image.asset(image, fit: BoxFit.cover,),
+      leading: Image.asset(
+        image,
+        fit: BoxFit.cover,
+      ),
       contentPadding: EdgeInsets.zero,
       title: Text(
         title,

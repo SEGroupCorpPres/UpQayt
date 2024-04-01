@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/app/presentation/widgets/onboarding_text_list.dart';
+import 'package:upqayt/app/presentation/widgets/onbording_title.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
 import 'package:upqayt/features/presentation/pages/map/map_screen.dart';
@@ -39,8 +40,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   void dispose() {
     // TODO: implement dispose
-    super.dispose();
     _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -79,7 +80,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 SizedBox(height: size.height * .17),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: onboardingTitleList(context)[_selectPage],
+                  child: onboardingTitleList(context)[_selectPage]
                 ),
                 SizedBox(height: size.height * .01),
                 Padding(
@@ -136,7 +137,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: _images.map((e) {
                     var index = _images.indexOf(e);
-                    return Container(
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
                       margin: const EdgeInsets.symmetric(horizontal: 4),
                       decoration: BoxDecoration(
                         color: index == _selectPage ? AppColors.mainColor : AppColors.subtitleColor,
