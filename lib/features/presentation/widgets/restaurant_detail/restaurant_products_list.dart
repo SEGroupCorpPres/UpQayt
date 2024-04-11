@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
 import 'package:upqayt/features/presentation/widgets/restaurant_detail/product/restaurant_product.dart';
 
 class RestaurantProductsList extends StatelessWidget {
   const RestaurantProductsList({super.key, required this.index});
+
   final int index;
 
   @override
@@ -31,7 +31,7 @@ class RestaurantProductsList extends StatelessWidget {
           runSpacing: 15.h,
           children: List.generate(
             category[index].items.length,
-                (item) => Container(
+            (item) => Container(
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(12.r), color: Colors.white),
               width: size.width / 2 - 30,
               child: RestaurantProduct(item: item, categoryIndex: index),

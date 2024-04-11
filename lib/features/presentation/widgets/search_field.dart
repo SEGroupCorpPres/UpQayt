@@ -19,6 +19,9 @@ class SearchField extends StatelessWidget {
   final TextEditingController controller;
   final ValueChanged<String>? onChanged;
   final VoidCallback? onPressedSuffixIcon;
+  final TextCapitalization? textCapitalization;
+  final int? minLines;
+  final int? maxLines;
 
   const SearchField({
     super.key,
@@ -29,9 +32,12 @@ class SearchField extends StatelessWidget {
     this.hintTextColor = AppColors.restaurantDescription,
     this.margin = const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
     this.suffixIcon,
+    this.minLines = 1,
+    this.maxLines = 10,
     this.bgColor = Colors.white,
     required this.width,
     this.contentPaddingHorizontally = 25,
+    this.textCapitalization = TextCapitalization.none,
     this.contentPaddingVertically = 10, required this.hintStyle, required this.controller,
     this.onChanged, this.onPressedSuffixIcon,
   });
@@ -48,6 +54,9 @@ class SearchField extends StatelessWidget {
       child: TextField(
         onChanged: onChanged,
         controller: controller,
+        minLines: minLines,
+        maxLines: maxLines,
+        textCapitalization: textCapitalization!,
         decoration: InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.symmetric(horizontal: contentPaddingHorizontally, vertical: contentPaddingVertically).r,

@@ -12,6 +12,8 @@ import 'package:upqayt/features/presentation/pages/orders/order_screen.dart';
 import 'package:upqayt/features/presentation/pages/restaurant/restaurant_detail_screen.dart';
 import 'package:upqayt/features/presentation/pages/shopping_bag/shopping_bag_screen.dart';
 
+import '../features/presentation/pages/shopping_bag/placing_an_order_screen.dart';
+
 class App extends StatelessWidget {
   App({super.key});
   final AppTheme _appTheme = AppTheme();
@@ -31,7 +33,9 @@ class App extends StatelessWidget {
       // child: HomePage(),
       // child: TopProductsScreen(),
       // child: RestaurantDetailScreen(),
-      child: ShoppingBagScreen(),
+      // child: ShoppingBagScreen(),
+      child: PlacingAnOrderScreen(),
+
       // child: OrderScreen(),
       // child: IntroScreen(),
       // child: SplashScreen(),

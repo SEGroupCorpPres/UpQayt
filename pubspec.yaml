@@ -75,6 +75,7 @@ dependencies:
   animations: ^2.0.11
   flutter_map_animations: ^0.5.3
   statusbarz: ^1.0.14
+  marquee: ^2.2.3
   shimmer: ^3.0.0
   searchbar_animation: ^0.0.4
   bottom_sheet: ^4.0.0
