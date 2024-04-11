@@ -8,6 +8,7 @@ import 'package:upqayt/features/presentation/pages/home/home.dart';
 import 'package:upqayt/features/presentation/pages/home/top_products_screen.dart';
 import 'package:upqayt/features/presentation/pages/map/map_screen.dart';
 import 'package:upqayt/features/presentation/pages/map/location_search_screen.dart';
+import 'package:upqayt/features/presentation/pages/orders/courier_location.dart';
 import 'package:upqayt/features/presentation/pages/orders/order_screen.dart';
 import 'package:upqayt/features/presentation/pages/restaurant/restaurant_detail_screen.dart';
 import 'package:upqayt/features/presentation/pages/shopping_bag/shopping_bag_screen.dart';
@@ -34,8 +35,8 @@ class App extends StatelessWidget {
       // child: TopProductsScreen(),
       // child: RestaurantDetailScreen(),
       // child: ShoppingBagScreen(),
-      child: PlacingAnOrderScreen(),
-
+      // child: PlacingAnOrderScreen(),
+child: CourierLocation(),
       // child: OrderScreen(),
       // child: IntroScreen(),
       // child: SplashScreen(),

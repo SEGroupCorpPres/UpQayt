@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:upqayt/core/colors.dart';
@@ -87,9 +86,9 @@ class OrderStatus extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

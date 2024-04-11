@@ -87,6 +87,7 @@ class Assets {
   static const String imagesChoparPizza = 'assets/images/chopar_pizza.png';
   static const String imagesCola025 = 'assets/images/cola_025.png';
   static const String imagesColaBank = 'assets/images/cola_bank.png';
+  static const String imagesCourierLocation = 'assets/images/courier_location.png';
   static const String imagesFreeAndSous = 'assets/images/free_and_sous.png';
   static const String imagesHodDog = 'assets/images/hod_dog.png';
   static const String imagesKfc = 'assets/images/kfc.png';

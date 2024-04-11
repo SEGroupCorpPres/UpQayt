@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
-import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
-import 'package:upqayt/features/presentation/widgets/order/order.dart';
 import 'package:upqayt/features/presentation/widgets/order/order_list.dart';
-import 'package:upqayt/features/presentation/widgets/order/order_status.dart';
 import 'package:upqayt/features/presentation/widgets/order/order_status_list.dart';
 import 'package:upqayt/features/presentation/widgets/order/order_tab.dart';
 
