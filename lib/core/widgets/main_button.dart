@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
@@ -8,6 +9,8 @@ class MainButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color? titleColor;
   final double? margin;
+  final bool? isLogoutBtn;
+  final IconData? icon;
 
   const MainButton({
     super.key,
@@ -16,6 +19,8 @@ class MainButton extends StatelessWidget {
     required this.onTap,
     this.titleColor = Colors.black,
     this.margin = 4,
+    this.isLogoutBtn = false,
+    this.icon,
   });
 
   @override
@@ -31,9 +36,16 @@ class MainButton extends StatelessWidget {
           color: color,
         ),
         child: Center(
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(color: titleColor),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              isLogoutBtn! ? Icon(icon!, color: titleColor, size: 18.sp,) : Container(),
+              SizedBox(width: isLogoutBtn! ? 10.w : 0),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(color: titleColor),
+              ),
+            ],
           ),
         ),
       ),

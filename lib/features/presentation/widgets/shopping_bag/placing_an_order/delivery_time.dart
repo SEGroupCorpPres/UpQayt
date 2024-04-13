@@ -84,6 +84,9 @@ class _DeliveryTimeState extends State<DeliveryTime> {
                   ),
                   SizedBox(height: 10.h),
                   SearchField(
+                    onTapOutside: (value){
+                      FocusNode().unfocus();
+                    },
                     onChanged: (value) {
                       _promoCodeController.text = value;
                     },

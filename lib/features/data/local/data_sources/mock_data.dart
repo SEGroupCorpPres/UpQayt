@@ -337,6 +337,18 @@ Map<String, dynamic>? shoppingBagProductList = {
   ]
 };
 
+List<Map<String, dynamic>> notify = [
+  {
+    'title': 'King burgerdan 25% chegirma',
+    'teg': 'chegirma',
+    'date': DateTime(2024, 1, 8, 16, 24),
+  },
+  {
+    'title': 'Maxsulotlarni bepul yetkazamiz',
+    'teg': 'e\'lon',
+    'date': DateTime(2024, 1, 19, 12, 24),
+  },
+];
 List<Map<String, dynamic>> orderList = [
   {
     'id': '123456',

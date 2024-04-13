@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/core/colors.dart';
@@ -22,6 +21,8 @@ class SearchField extends StatelessWidget {
   final TextCapitalization? textCapitalization;
   final int? minLines;
   final int? maxLines;
+  // final VoidCallback onTap;
+  final ValueChanged<PointerDownEvent> onTapOutside;
 
   const SearchField({
     super.key,
@@ -38,8 +39,13 @@ class SearchField extends StatelessWidget {
     required this.width,
     this.contentPaddingHorizontally = 25,
     this.textCapitalization = TextCapitalization.none,
-    this.contentPaddingVertically = 10, required this.hintStyle, required this.controller,
-    this.onChanged, this.onPressedSuffixIcon,
+    this.contentPaddingVertically = 10,
+    required this.hintStyle,
+    required this.controller,
+    this.onChanged,
+    this.onPressedSuffixIcon,
+    // required this.onTap,
+    required this.onTapOutside,
   });
 
   @override
@@ -52,6 +58,8 @@ class SearchField extends StatelessWidget {
       ),
       margin: margin.r,
       child: TextField(
+        // onTap: onTap,
+        onTapOutside: onTapOutside,
         onChanged: onChanged,
         controller: controller,
         minLines: minLines,
@@ -60,17 +68,21 @@ class SearchField extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           contentPadding: EdgeInsets.symmetric(horizontal: contentPaddingHorizontally, vertical: contentPaddingVertically).r,
-          prefixIcon: prefixIcon != null ? Icon(
-            prefixIcon,
-            color: prefixIconColor,
-          ) : null,
+          prefixIcon: prefixIcon != null
+              ? Icon(
+                  prefixIcon,
+                  color: prefixIconColor,
+                )
+              : null,
           hintText: hintText,
           hintStyle: hintStyle,
-          suffixIcon: suffixIcon != null ? IconButton(
-            onPressed: onPressedSuffixIcon,
-            icon: Icon(suffixIcon),
-            color: prefixIconColor,
-          ) : null,
+          suffixIcon: suffixIcon != null
+              ? IconButton(
+                  onPressed: onPressedSuffixIcon,
+                  icon: Icon(suffixIcon),
+                  color: prefixIconColor,
+                )
+              : null,
         ),
       ),
     );

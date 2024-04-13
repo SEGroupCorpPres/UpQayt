@@ -4,7 +4,7 @@ import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/presentation/pages/home/home_screen.dart';
 import 'package:upqayt/features/presentation/pages/orders/order_screen.dart';
-import 'package:upqayt/features/presentation/pages/profile.dart';
+import 'package:upqayt/features/presentation/pages/profile/profile.dart';
 import 'package:upqayt/features/presentation/pages/search/search_screen.dart';
 
 class HomePage extends StatefulWidget {

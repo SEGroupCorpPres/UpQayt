@@ -145,6 +145,9 @@ class _SearchScreenState extends State<SearchScreen> with SingleTickerProviderSt
                       width: !_isTextEmpty ? size.width - 80.h : size.width - 40.w,
                       margin: EdgeInsets.symmetric(vertical: 5.h),
                       child: SearchField(
+                        onTapOutside: (value){
+                          FocusNode().unfocus();
+                        },
                         onChanged: (text) {
                           if (text.isNotEmpty) {
                             _isTextEmpty = false;

@@ -12,7 +12,9 @@ import 'package:upqayt/generated/assets.dart';
 
 class Order extends StatelessWidget {
   final int index;
+
   const Order({super.key, required this.index});
+
   Color _orderStatusColor(OrderStatus orderStatus) {
     switch (orderStatus) {
       case OrderStatus.canceled:
@@ -34,26 +36,27 @@ class Order extends StatelessWidget {
         return 'Yetkazildi';
     }
   }
+
   @override
   Widget build(BuildContext context) {
-  final size = MediaQuery.sizeOf(context);
-  DateTime date = orderList[index]['created'];
-  TimeOfDay time = TimeOfDay.fromDateTime(date);
-  initializeDateFormatting('uz_UZ', null);
-  String formattedDate = DateFormat(
-    'd MMMM yyyy, HH:mm',
-  ).format(date);
-  int currentHour = time.hour;
+    final size = MediaQuery.sizeOf(context);
+    DateTime date = orderList[index]['created'];
+    TimeOfDay time = TimeOfDay.fromDateTime(date);
+    initializeDateFormatting('uz_UZ', null);
+    String formattedDate = DateFormat(
+      'd MMMM yyyy, HH:mm',
+    ).format(date);
+    int currentHour = time.hour;
     return InkWell(
       onTap: () => Navigator.push(
         context,
         Platform.isIOS
             ? CupertinoPageRoute(
-          builder: (context) => const RestaurantDetailScreen(),
-        )
+                builder: (context) => const RestaurantDetailScreen(),
+              )
             : MaterialPageRoute(
-          builder: (context) => const RestaurantDetailScreen(),
-        ),
+                builder: (context) => const RestaurantDetailScreen(),
+              ),
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -124,8 +127,8 @@ class Order extends StatelessWidget {
                       child: Text(
                         _orderStatus(orderList[index]['status']),
                         style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: _orderStatusColor(orderList[index]['status']),
-                        ),
+                              color: _orderStatusColor(orderList[index]['status']),
+                            ),
                       ),
                     ),
                   ],
@@ -155,7 +158,10 @@ class Order extends StatelessWidget {
                           height: 40.r,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8.r),
-                            image: DecorationImage(image: AssetImage(orderList[index]['products'][item]!), fit: BoxFit.cover),
+                            image: DecorationImage(
+                              image: AssetImage(orderList[index]['products'][item]!),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ],

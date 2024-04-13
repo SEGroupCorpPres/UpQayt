@@ -30,6 +30,9 @@ Widget buildBottomSheet(
       Container(
         margin: EdgeInsets.symmetric(vertical: 5.h),
         child: SearchField(
+          onTapOutside: (value) {
+            FocusNode().unfocus();
+          },
           controller: addressController,
           size: size,
           width: size.width,
@@ -48,6 +51,9 @@ Widget buildBottomSheet(
           Container(
             margin: EdgeInsets.symmetric(vertical: 5.h),
             child: SearchField(
+              onTapOutside: (value) {
+                FocusNode().unfocus();
+              },
               controller: entryController,
               size: size,
               width: size.width * .27,
@@ -64,6 +70,9 @@ Widget buildBottomSheet(
           Container(
             margin: EdgeInsets.symmetric(vertical: 5.h),
             child: SearchField(
+              onTapOutside: (value) {
+                FocusNode().unfocus();
+              },
               controller: floorController,
               size: size,
               width: size.width * .27,
@@ -80,6 +89,9 @@ Widget buildBottomSheet(
           Container(
             margin: EdgeInsets.symmetric(vertical: 5.h),
             child: SearchField(
+              onTapOutside: (value) {
+                FocusNode().unfocus();
+              },
               controller: homeController,
               size: size,
               width: size.width * .27,
@@ -98,6 +110,9 @@ Widget buildBottomSheet(
       Container(
         margin: EdgeInsets.symmetric(vertical: 5.h),
         child: SearchField(
+          onTapOutside: (value) {
+            FocusNode().unfocus();
+          },
           controller: commentController,
           size: size,
           width: size.width,
@@ -112,6 +127,9 @@ Widget buildBottomSheet(
       Container(
         margin: EdgeInsets.symmetric(vertical: 5.h),
         child: SearchField(
+          onTapOutside: (value) {
+            FocusNode().unfocus();
+          },
           controller: addressNameController,
           size: size,
           width: size.width,

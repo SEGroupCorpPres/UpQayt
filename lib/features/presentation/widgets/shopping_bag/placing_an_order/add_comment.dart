@@ -41,6 +41,9 @@ class _AddCommentState extends State<AddComment> {
           ),
           SizedBox(height: 10.h),
           SearchField(
+            onTapOutside: (value){
+              FocusNode().unfocus();
+            },
             margin: EdgeInsets.zero,
             contentPaddingVertically: 5.h,
             bgColor: Colors.black12,

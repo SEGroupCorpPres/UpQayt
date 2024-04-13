@@ -96,6 +96,9 @@ class _CourierLocationState extends State<CourierLocation> {
                 ),
                 SizedBox(height: 10.h),
                 SearchField(
+                  onTapOutside: (value) {
+                    FocusNode().unfocus();
+                  },
                   size: size,
                   hintText: 'Izoh...',
                   margin: EdgeInsets.zero,
@@ -238,6 +241,9 @@ class _CourierLocationState extends State<CourierLocation> {
           Material(
             borderRadius: BorderRadius.circular(8.r),
             child: SearchField(
+              onTapOutside: (value) {
+                FocusNode().unfocus();
+              },
               size: size,
               margin: EdgeInsets.zero,
               contentPaddingVertically: 15,

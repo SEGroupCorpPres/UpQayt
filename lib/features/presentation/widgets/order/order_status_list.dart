@@ -11,6 +11,7 @@ class OrderStatusList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemCount: orderList.length,
+      physics: ClampingScrollPhysics(),
       itemBuilder: (context, item) {
         return const OrderStatus();
       },

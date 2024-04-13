@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:upqayt/core/colors.dart';
+import 'package:upqayt/features/presentation/pages/home/notification_screen.dart';
 import 'package:upqayt/features/presentation/pages/shopping_bag/shopping_bag_screen.dart';
 import 'package:upqayt/features/presentation/widgets/home_screen/home_screen_restaurants.dart';
 import 'package:upqayt/features/presentation/widgets/home_screen/home_screen_top_products.dart';
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       IconButton(
                         padding: EdgeInsets.zero,
-                        onPressed: () {},
+                        onPressed: () => pushNewScreen(context, screen: const NotificationScreen(), withNavBar: true),
                         icon: const Icon(
                           Icons.notifications_active_outlined,
                           color: Colors.white,
@@ -95,6 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 shrinkWrap: true,
                 children: [
                   SearchField(
+                    onTapOutside: (value){
+                      FocusNode().unfocus();
+                    },
                     controller: searchController,
                     size: size,
                     width: size.width,

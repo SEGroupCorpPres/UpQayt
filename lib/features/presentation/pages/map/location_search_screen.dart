@@ -59,6 +59,9 @@ class _LocationSearchScreenState extends State<LocationSearchScreen> {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5.h),
                 child: SearchField(
+                  onTapOutside: (value){
+                    FocusNode().unfocus();
+                  },
                   controller: searchController,
                   size: size,
                   width: size.width - 80.h,

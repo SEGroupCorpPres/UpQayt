@@ -66,6 +66,9 @@ class _YandexMapScreenState extends State<YandexMapScreen> {
                             ],
                           ),
                           child: SearchField(
+                            onTapOutside: (value){
+                              FocusNode().unfocus();
+                            },
                             controller: searchController,
                             size: size,
                             width: size.width,

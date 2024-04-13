@@ -35,6 +35,7 @@ class Assets {
   static const String iconsCornIcon = 'assets/icons/corn_icon.png';
   static const String iconsCourier = 'assets/icons/courier.svg';
   static const String iconsCourierIcon = 'assets/icons/courier_icon.png';
+  static const String iconsEditAlt = 'assets/icons/edit_alt.svg';
   static const String iconsEggIcon = 'assets/icons/egg_icon.png';
   static const String iconsFilterIcon = 'assets/icons/filter_icon.png';
   static const String iconsFrame = 'assets/icons/Frame.png';
@@ -120,6 +121,7 @@ class Assets {
   static const String imagesShoppingBagBg = 'assets/images/shopping_bag_bg.svg';
   static const String imagesSous = 'assets/images/sous.png';
   static const String imagesSousHeinz = 'assets/images/sous_heinz.png';
+  static const String imagesSulaymon = 'assets/images/sulaymon.png';
   static const String imagesSushi = 'assets/images/sushi.png';
   static const String imagesTerassaCafe = 'assets/images/terassa_cafe.png';
   static const String imagesXorazmLavash = 'assets/images/xorazm_lavash.png';
