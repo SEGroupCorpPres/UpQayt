@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/core/widgets/main_button.dart';
 import 'package:upqayt/features/presentation/widgets/search_field.dart';
@@ -416,7 +416,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                               colorFilter: const ColorFilter.mode(CupertinoColors.white, BlendMode.srcIn),
                               width: 15.w,
                             ),
-                      onPressed: () => pushNewScreen(context, screen: const EditProfileScreen(), withNavBar: true),
+                      onPressed: () => pushScreen(context, screen: const EditProfileScreen(), withNavBar: true),
                     ),
                   ),
                 ],

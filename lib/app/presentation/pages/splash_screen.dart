@@ -1,7 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:upqayt/app/presentation/pages/intro.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/generated/assets.dart';
@@ -62,15 +63,19 @@ class _SplashScreenState extends State<SplashScreen> with WidgetsBindingObserver
     super.dispose();
   }
 
-  futureNavigate() {  
+  futureNavigate() {
     Future.delayed(
       const Duration(milliseconds: 1500),
       () {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(
-            builder: (_) => const IntroScreen(),
-          ),
+          Platform.isIOS
+              ? CupertinoPageRoute(
+                  builder: (_) => const IntroScreen(),
+                )
+              : MaterialPageRoute(
+                  builder: (_) => const IntroScreen(),
+                ),
           (route) => false,
         );
       },
@@ -79,8 +84,18 @@ class _SplashScreenState extends State<SplashScreen> with WidgetsBindingObserver
 
   @override
   Widget build(BuildContext context) {
+    // Status bar rangini o'zgartirish uchun
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: AppColors.mainColor,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
+      backgroundColor: AppColors.mainColor,
       body: SafeArea(
+        top: true,
         bottom: false,
         child: Container(
           height: MediaQuery.sizeOf(context).height,
@@ -89,7 +104,11 @@ class _SplashScreenState extends State<SplashScreen> with WidgetsBindingObserver
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Image.asset(Assets.assetsBackground),
+              Image.asset(
+                Assets.assetsBackground,
+                fit: BoxFit.cover,
+                width: MediaQuery.sizeOf(context).width,
+              ),
               Image.asset(Assets.assetsSplashLogo),
             ],
           ),

@@ -81,7 +81,7 @@ class Restaurants extends StatelessWidget {
               ),
               rebate != null
                   ? Positioned(
-                      top: -10,
+                      top: -20,
                       left: 8,
                       child: Stack(
                         alignment: Alignment.center,

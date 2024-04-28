@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:upqayt/app/presentation/widgets/onboarding_text_list.dart';
-import 'package:upqayt/app/presentation/widgets/onbording_title.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
 import 'package:upqayt/features/presentation/pages/map/map_screen.dart';
@@ -37,6 +36,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       });
     });
   }
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -52,6 +52,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         child: Stack(
           children: [
             PageView.builder(
+              physics: const ClampingScrollPhysics(),
               controller: _pageController,
               itemCount: _images.length,
               itemBuilder: (context, index) {
@@ -78,10 +79,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(height: size.height * .17),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: onboardingTitleList(context)[_selectPage]
-                ),
+                Padding(padding: EdgeInsets.symmetric(horizontal: 20.w), child: onboardingTitleList(context)[_selectPage]),
                 SizedBox(height: size.height * .01),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -135,19 +133,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: _images.map((e) {
-                    var index = _images.indexOf(e);
-                    return AnimatedContainer(
-                      duration: const Duration(milliseconds: 300),
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      decoration: BoxDecoration(
-                        color: index == _selectPage ? AppColors.mainColor : AppColors.subtitleColor,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      height: 6,
-                      width: index == _selectPage ? 20 : 6,
-                    );
-                  }).toList(),
+                  children: _images.map(
+                    (e) {
+                      var index = _images.indexOf(e);
+                      return AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        decoration: BoxDecoration(
+                          color: index == _selectPage ? AppColors.mainColor : AppColors.subtitleColor,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        height: 6,
+                        width: index == _selectPage ? 20 : 6,
+                      );
+                    },
+                  ).toList(),
                 ),
                 SizedBox(
                   height: size.height * .01,
@@ -162,7 +162,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   child: TextButton(
                     onPressed: () => Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (_) => YandexMapScreen()),
+                      Platform.isIOS
+                          ? CupertinoPageRoute(
+                              builder: (_) => const YandexMapScreen(),
+                            )
+                          : MaterialPageRoute(
+                              builder: (_) => const YandexMapScreen(),
+                            ),
                       (route) => false,
                     ),
                     child: Text(

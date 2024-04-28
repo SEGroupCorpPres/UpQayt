@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:upqayt/app/presentation/pages/onboarding.dart';
@@ -29,6 +30,13 @@ class _IntroScreenState extends State<IntroScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: AppColors.mainColor, // Status bar rangi oq bo'lishi
+        // statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.light// Oq yorug'likdagi ikonlarni ko'rsatish
+      ),
+    );
     return Scaffold(
       backgroundColor: AppColors.mainBGColor,
       body: SafeArea(

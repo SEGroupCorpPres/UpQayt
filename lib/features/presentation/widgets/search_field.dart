@@ -21,6 +21,9 @@ class SearchField extends StatelessWidget {
   final TextCapitalization? textCapitalization;
   final int? minLines;
   final int? maxLines;
+  final FocusNode? focusNode;
+  final bool? autofocus;
+
   // final VoidCallback onTap;
   final ValueChanged<PointerDownEvent> onTapOutside;
 
@@ -46,6 +49,8 @@ class SearchField extends StatelessWidget {
     this.onPressedSuffixIcon,
     // required this.onTap,
     required this.onTapOutside,
+    this.focusNode,
+    this.autofocus = false,
   });
 
   @override
@@ -58,7 +63,9 @@ class SearchField extends StatelessWidget {
       ),
       margin: margin.r,
       child: TextField(
+        focusNode: focusNode,
         // onTap: onTap,
+        autofocus: autofocus!,
         onTapOutside: onTapOutside,
         onChanged: onChanged,
         controller: controller,

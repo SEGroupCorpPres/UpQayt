@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:upqayt/features/data/local/data_sources/mock_data.dart';
 import 'package:upqayt/features/presentation/pages/restaurant/restaurant_detail_screen.dart';
 import 'package:upqayt/features/presentation/widgets/home_screen/home_screen_fliter_list.dart';
@@ -26,7 +26,7 @@ class HomeScreenRestaurants extends StatelessWidget {
             child: RowTitle(title: 'Restoranlar', btnTitle: null, onTap: null),
           ),
           const HomeScreenFilterList(),
-          SizedBox(height: 10.h),
+          // SizedBox(height: 10.h),
           ListView.builder(
             shrinkWrap: true,
             itemCount: restaurants.length,
@@ -37,7 +37,7 @@ class HomeScreenRestaurants extends StatelessWidget {
                 ratingCount = '125+';
               }
               return InkWell(
-                onTap: () => pushNewScreen(context, screen: const RestaurantDetailScreen(), withNavBar: false),
+                onTap: () => pushScreen(context, screen: const RestaurantDetailScreen(), withNavBar: false),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 child: Restaurants(

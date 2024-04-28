@@ -11,7 +11,7 @@ class Assets {
   static const String assetsImagesOnboarding1 = 'assets/images/onboarding_1.svg';
   static const String assetsImagesOnboarding2 = 'assets/images/onboarding_2.svg';
   static const String assetsImagesOnboarding3 = 'assets/images/onboarding_3.svg';
-  static const String assetsLogo = 'assets/logo.svg';
+  static const String assetsLogo = 'assets/logo.png';
   static const String assetsSplashLogo = 'assets/splash_logo.png';
   static const String iconsAvocadoIcon = 'assets/icons/avocado_icon.png';
   static const String iconsBag = 'assets/icons/Bag.png';
@@ -127,5 +127,6 @@ class Assets {
   static const String imagesXorazmLavash = 'assets/images/xorazm_lavash.png';
   static const String l10nRu = 'assets/l10n/ru.json';
   static const String l10nUz = 'assets/l10n/uz.json';
+  static const String upQaytAssetsLogo = 'assets/logo.svg';
 
 }

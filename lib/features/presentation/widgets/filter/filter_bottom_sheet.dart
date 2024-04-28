@@ -42,7 +42,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 
-    return Container(
+    return SizedBox(
       height: size.height * .73,
       child: ListView(
         controller: scrollController,
@@ -59,10 +59,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
               color: Colors.white,
             ),
-            child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-              child: MainButton(title: 'Topilganlarni ko\'rsatish', onTap: () => Navigator.pop(context)),
-            ),
+            child: MainButton(title: 'Topilganlarni ko\'rsatish', onTap: () => Navigator.pop(context), titleColor: Colors.white,),
           ),
         ],
       ),

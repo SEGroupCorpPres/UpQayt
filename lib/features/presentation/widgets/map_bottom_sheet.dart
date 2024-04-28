@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,12 +18,32 @@ Widget buildBottomSheet(
   TextEditingController homeController,
   TextEditingController commentController,
   TextEditingController addressNameController,
+  VoidCallback onTap,
 ) {
   final size = MediaQuery.sizeOf(context);
   return ListView(
-    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+    padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 20.h, top: 10.h),
     controller: scrollController,
     children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          InkWell(
+            onTap: onTap,
+            child: Container(
+              height: 2,
+              width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.r),
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+      SizedBox(
+        height: 10.h,
+      ),
       Text(
         'Yetkazib berish manzili',
         style: Theme.of(context).textTheme.titleLarge,
@@ -147,7 +169,13 @@ Widget buildBottomSheet(
         title: 'Manzilni Saqlash',
         onTap: () => Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (_) => HomePage()),
+          Platform.isIOS
+              ? CupertinoPageRoute(
+                  builder: (_) => const HomePage(),
+                )
+              : MaterialPageRoute(
+                  builder: (_) => const HomePage(),
+                ),
           (route) => false,
         ),
       ),

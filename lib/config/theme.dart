@@ -10,7 +10,8 @@ class AppTheme {
 
       brightness: Brightness.light,
       useMaterial3: true,
-      cupertinoOverrideTheme: CupertinoThemeData(
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+      cupertinoOverrideTheme: const CupertinoThemeData(
         brightness: Brightness.light,
       ),
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
