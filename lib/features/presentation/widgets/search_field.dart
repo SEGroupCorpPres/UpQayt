@@ -26,6 +26,7 @@ class SearchField extends StatelessWidget {
 
   // final VoidCallback onTap;
   final ValueChanged<PointerDownEvent> onTapOutside;
+  final TextInputType? keyboardType;
 
   const SearchField({
     super.key,
@@ -50,7 +51,7 @@ class SearchField extends StatelessWidget {
     // required this.onTap,
     required this.onTapOutside,
     this.focusNode,
-    this.autofocus = false,
+    this.autofocus = false, this.keyboardType = TextInputType.text,
   });
 
   @override
@@ -71,6 +72,7 @@ class SearchField extends StatelessWidget {
         controller: controller,
         minLines: minLines,
         maxLines: maxLines,
+        keyboardType: keyboardType,
         textCapitalization: textCapitalization!,
         decoration: InputDecoration(
           border: InputBorder.none,

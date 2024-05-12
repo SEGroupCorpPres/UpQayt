@@ -1,21 +1,27 @@
-import 'dart:async';
+// To parse this JSON data, do
+//
+//     final auth = authFromJson(jsonString);
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'dart:convert';
 
 part 'auth_model.freezed.dart';
 part 'auth_model.g.dart';
 
-@freezed
-class AuthModel with _$AuthModel {
-  const factory AuthModel({
-    required String accessToken,
-    required String refreshToken,
-    required String phoneNumber,
-    required String deviceName,
-    required String deviceToken
-  }) = _AuthModel;
+Auth authFromJson(String str) => Auth.fromJson(json.decode(str));
 
-  factory AuthModel.fromJson(Map<String, dynamic> json) => _$AuthModelFromJson(json);
-  // @override
-  // Map<String, dynamic> toJson() => _$AuthModelToJson(this);
+String authToJson(Auth data) => json.encode(data.toJson());
+
+@freezed
+class Auth with _$Auth {
+  const factory Auth({
+    @JsonKey(name: "phone_number")
+    required String phoneNumber,
+    @JsonKey(name: "device_name")
+    required String deviceName,
+    @JsonKey(name: "device_token")
+    required String deviceToken,
+  }) = _Auth;
+
+  factory Auth.fromJson(Map<String, dynamic> json) => _$AuthFromJson(json);
 }

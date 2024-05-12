@@ -20,7 +20,8 @@ class RestaurantDetailScreen extends StatefulWidget {
   State<RestaurantDetailScreen> createState() => _RestaurantDetailScreenState();
 }
 
-class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> with SingleTickerProviderStateMixin {
+class _RestaurantDetailScreenState extends State<RestaurantDetailScreen>
+    with SingleTickerProviderStateMixin {
   ScrollController scrollController = ScrollController();
   late TabController _tabController;
   bool isScroll = false;
@@ -29,17 +30,11 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> with Si
 
   @override
   void initState() {
-    // TODO: implement initState
-    scrollController.addListener(() {
-      // if (scrollController.) {
-      //
-      // }
-    });
     print(isScroll);
     super.initState();
-    _tabController = TabController(length: foodCategory.length, vsync: this, initialIndex: 0);
+    _tabController = TabController(
+        length: foodCategory.length, vsync: this, initialIndex: 0);
     print(_tabController.index);
-
   }
 
   @override
@@ -72,15 +67,20 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> with Si
                     fit: BoxFit.cover,
                   ),
                   centerTitle: false,
-                  titlePadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                  title: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+                  titlePadding:
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                  title: LayoutBuilder(builder:
+                      (BuildContext context, BoxConstraints constraints) {
                     if (constraints.biggest.height > 100) {
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             'Navruz Restaurant',
-                            style: Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 14.sp),
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium!
+                                .copyWith(fontSize: 14.sp),
                           ),
                           Container(
                             width: 35.w,
@@ -103,7 +103,11 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> with Si
                                 SizedBox(width: 3.w),
                                 Text(
                                   '4.8',
-                                  style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.grey, fontSize: 8.sp),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(
+                                          color: Colors.grey, fontSize: 8.sp),
                                 )
                               ],
                             ),
@@ -115,10 +119,17 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> with Si
                     }
                   }),
                 ),
-                leading: RestaurantAppBarIcon(onPressed: () => Navigator.pop(context), icon: Icons.adaptive.arrow_back),
+                leading: RestaurantAppBarIcon(
+                    onPressed: () => Navigator.pop(context),
+                    icon: Icons.adaptive.arrow_back),
                 actions: [
-                  RestaurantAppBarIcon(onPressed: () {}, icon: Icons.adaptive.share_outlined),
-                  RestaurantAppBarIcon(onPressed: () {}, icon: CupertinoIcons.heart_fill, color: Colors.red,),
+                  RestaurantAppBarIcon(
+                      onPressed: () {}, icon: Icons.adaptive.share_outlined),
+                  RestaurantAppBarIcon(
+                    onPressed: () {},
+                    icon: CupertinoIcons.heart_fill,
+                    color: Colors.red,
+                  ),
                   RestaurantAppBarIcon(
                     onPressed: () => Navigator.push(
                       context,
@@ -136,7 +147,8 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> with Si
               ),
             ),
             SliverPersistentHeader(
-              delegate: RestaurantFoodCategoriesDelegate(tabController: _tabController),
+              delegate: RestaurantFoodCategoriesDelegate(
+                  tabController: _tabController),
               pinned: true,
             ),
             SliverPadding(

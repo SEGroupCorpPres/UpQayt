@@ -1,9 +1,9 @@
-import 'dart:async';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:upqayt/features/domain/entities/auth_model.dart';
-import 'package:upqayt/features/domain/services/auth_api.dart';
+import 'package:upqayt/features/domain/entities/otp_verify_model.dart';
+import 'package:upqayt/features/domain/entities/refresh_token_model.dart';
+import 'package:upqayt/features/domain/services/api_service.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -11,34 +11,39 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ApiService apiService;
 
-  AuthBloc(this.apiService) : super(const InitialState());
+  AuthBloc(this.apiService) : super(Loading()) {
+    on<RegisterDevice>(_onRegisterDevice);
+    on<VerifyOtp>(_onVerifyOtp);
+    on<RefreshTokenEvent>(_onRefreshToken);
+  }
 
-  Stream<AuthState> mapEventToState(AuthEvent event) async* {
-    if (event is LoginEvent) {
-      yield const LoadingState();
-      try {
-        // Telefon raqamini yuborish orqali foydalanuvchini autentifikatsiya qilish
-        await apiService.sendVerificationCode(
-          event.phoneNumber,
-          event.deviceName,
-          event.deviceToken,
-        );
-        yield const SuccessState(); // Kod muvaffaqiyatli yuborilgan
-      } catch (e) {
-        yield FailureState(e.toString());
-      }
-    } else if (event is VerifyEvent) {
-      yield const LoadingState();
-      try {
-        // Telefon raqamini tasdiqlash
-        final authModel = await apiService.verifyPhoneNumber(
-          event.phoneNumber,
-          event.verificationCode,
-        );
-        yield SuccessState(authModel: authModel);
-      } catch (e) {
-        yield FailureState(e.toString());
-      }
+  Future<void> _onRegisterDevice(RegisterDevice event, Emitter<AuthState> emit) async {
+    emit(Loading());
+    try {
+      await apiService.registerDevice(event.deviceRegistration);
+      emit(Success('Устройство зарегистрировано'));
+    } catch (error) {
+      emit(ErrorAuthState('Ошибка регистрации устройства'));
+    }
+  }
+
+  Future<void> _onVerifyOtp(VerifyOtp event, Emitter<AuthState> emit) async {
+    emit(Loading());
+    try {
+      await apiService.verifyOtp(event.otpVerification);
+      emit(Success('Код OTP успешно проверен'));
+    } catch (error) {
+      emit(ErrorAuthState('Ошибка проверки OTP'));
+    }
+  }
+
+  Future<void> _onRefreshToken(RefreshTokenEvent event, Emitter<AuthState> emit) async {
+    emit(Loading());
+    try {
+      await apiService.refreshToken(event.refreshToken);
+      emit(Success('Токен успешно обновлен'));
+    } catch (error) {
+      emit(ErrorAuthState('Ошибка обновления токена'));
     }
   }
 }

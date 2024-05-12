@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1039419001903",
+    "project_id": "upqayt-41493",
+    "storage_bucket": "upqayt-41493.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039419001903:android:5742f99c0d4a78d5a30ada",
+        "android_client_info": {
+          "package_name": "uz.appxtechgroup.presidentftinc.flutter.upqayt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoEg1C2Yoqt5bH3LzDtJILQyvcYcEvN70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
