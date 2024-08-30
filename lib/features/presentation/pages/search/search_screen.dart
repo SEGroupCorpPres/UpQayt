@@ -77,7 +77,13 @@ class _SearchScreenState extends State<SearchScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
-
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: Colors.white, // Status bar rangi oq bo'lishi
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.light// Oq yorug'likdagi ikonlarni ko'rsatish
+      ),
+    );
 // Add elements from 'topProducts' to 'products' if they are not already present
     for (var product in topProduct) {
       if (filter.isNotEmpty) {

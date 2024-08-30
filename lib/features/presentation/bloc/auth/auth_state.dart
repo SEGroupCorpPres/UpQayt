@@ -8,12 +8,29 @@ abstract class AuthState extends Equatable {
   List<Object> get props => [];
 }
 
-class Loading extends AuthState {}
+class AuthLoading extends AuthState {}
 
-class Success extends AuthState {
+
+class PhoneRegistrationSuccess extends AuthState {
   final String message;
 
-  const Success(this.message);
+  const PhoneRegistrationSuccess(this.message);
+
+  @override
+  List<Object> get props => [message];
+}
+class OtpVerificationSuccess extends AuthState {
+  final String message;
+
+  const OtpVerificationSuccess(this.message);
+
+  @override
+  List<Object> get props => [message];
+}
+class RefreshTokenSuccess extends AuthState {
+  final String message;
+
+  const RefreshTokenSuccess(this.message);
 
   @override
   List<Object> get props => [message];

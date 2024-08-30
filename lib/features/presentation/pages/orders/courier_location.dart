@@ -65,7 +65,7 @@ class _CourierLocationState extends State<CourierLocation> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             width: size.width,
-            constraints: BoxConstraints(maxHeight: 400.h),
+            constraints: BoxConstraints(maxHeight: 420.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -141,7 +141,7 @@ class _CourierLocationState extends State<CourierLocation> {
                   children: [
                     Flexible(
                       child: MainButton(
-                        title: 'Bekor qilish',
+                        title: 'Davom etish',
                         onTap: () {},
                         color: Colors.black12,
                         margin: 0,
@@ -152,8 +152,9 @@ class _CourierLocationState extends State<CourierLocation> {
                       child: MainButton(
                         margin: 0,
                         title: 'Bekor qilish',
-                        onTap: () {},
-                        titleColor: Colors.white,
+                        onTap: () => _cancelAlertDialog(context, size),
+                        titleColor: CupertinoColors.destructiveRed,
+                        color: AppColors.canselBtnBGColor,
                       ),
                     ),
                   ],
@@ -204,7 +205,7 @@ class _CourierLocationState extends State<CourierLocation> {
         ),
         Container(
           width: 110.w,
-          height: 35.h,
+          height: 40.h,
           decoration: BoxDecoration(
             color: Platform.isIOS ? Colors.transparent : AppColors.mainColor,
             borderRadius: BorderRadius.circular(Platform.isIOS ? 0 : 14.r),
@@ -223,39 +224,42 @@ class _CourierLocationState extends State<CourierLocation> {
 
   AlertDialog _alertDialog(BuildContext context, Size size) {
     return AlertDialog.adaptive(
-      actionsPadding: EdgeInsets.zero,
+      actionsPadding: EdgeInsets.only(bottom: Platform.isIOS ? 0 : 20),
       actionsAlignment: MainAxisAlignment.spaceEvenly,
       icon: const Icon(Icons.info_outline),
       title: Text(
         'Buyurtmani bekor qilmoqchimisiz ?',
         style: Theme.of(context).textTheme.titleMedium,
       ),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Fikringizni qoldiring',
-            style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.black54),
-          ),
-          SizedBox(height: 5.h),
-          Material(
-            borderRadius: BorderRadius.circular(8.r),
-            child: SearchField(
-              onTapOutside: (value) {
-                FocusNode().unfocus();
-              },
-              size: size,
-              margin: EdgeInsets.zero,
-              contentPaddingVertically: 15,
-              contentPaddingHorizontally: 10,
-              hintText: 'Buyurtmani nima sabdan bekor qilmoqchisiz ?',
-              width: size.width,
-              maxLines: 10,
-              hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.black45),
-              controller: _commentController,
+      content: SizedBox(
+        height: 80.h,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Fikringizni qoldiring',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.black54),
             ),
-          ),
-        ],
+            SizedBox(height: 5.h),
+            Material(
+              borderRadius: BorderRadius.circular(8.r),
+              child: SearchField(
+                onTapOutside: (value) {
+                  FocusNode().unfocus();
+                },
+                size: size,
+                margin: EdgeInsets.zero,
+                contentPaddingVertically: 15,
+                contentPaddingHorizontally: 10,
+                hintText: 'Buyurtmani nima sabdan bekor qilmoqchisiz ?',
+                width: size.width,
+                maxLines: 10,
+                hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.black45),
+                controller: _commentController,
+              ),
+            ),
+          ],
+        ),
       ),
       actions: [
         Container(
@@ -269,7 +273,11 @@ class _CourierLocationState extends State<CourierLocation> {
             onPressed: () => Navigator.pop(context),
             child: Text(
               'Orqaga',
-              style: Platform.isIOS ? Theme.of(context).textTheme.titleMedium!.copyWith(color: CupertinoColors.activeBlue) : Theme.of(context).textTheme.titleMedium!,
+              style: Platform.isIOS
+                  ? Theme.of(context).textTheme.titleMedium!.copyWith(
+                        color: CupertinoColors.activeBlue,
+                      )
+                  : Theme.of(context).textTheme.titleMedium!,
             ),
           ),
         ),
@@ -284,7 +292,11 @@ class _CourierLocationState extends State<CourierLocation> {
             onPressed: () => Navigator.pop(context),
             child: Text(
               'Bekor qilish',
-              style: Platform.isIOS ? Theme.of(context).textTheme.titleMedium!.copyWith(color: CupertinoColors.destructiveRed) : Theme.of(context).textTheme.labelMedium,
+              style: Platform.isIOS
+                  ? Theme.of(context).textTheme.titleMedium!.copyWith(
+                        color: CupertinoColors.destructiveRed,
+                      )
+                  : Theme.of(context).textTheme.labelMedium!.copyWith(fontSize: 15.sp),
             ),
           ),
         ),
@@ -324,11 +336,7 @@ class _CourierLocationState extends State<CourierLocation> {
                 ),
                 child: Row(
                   children: [
-                    Container(
-                      width: 3.2.w,
-                      height: 20.h,
-                      color: AppColors.mainColor,
-                    ),
+                   IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.adaptive.arrow_back)),
                     SizedBox(width: 10.w),
                     Text('Buyurtmalar', style: Theme.of(context).textTheme.titleLarge),
                     SizedBox(width: 20.w),

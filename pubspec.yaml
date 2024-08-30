@@ -35,10 +35,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  retrofit: ^4.1.0
+  retrofit: ^4.2.0
   json_annotation: ^4.9.0
   logger:
-  flutter_bloc: ^8.1.5
+  flutter_bloc: ^8.1.6
   get:
   freezed_annotation:
   equatable:
@@ -46,9 +46,13 @@ dependencies:
   replay_bloc: ^0.2.7
   bloc_concurrency: ^0.2.5
   shared_preferences:
+  flutter_secure_storage: ^9.2.2
+#  flutter_secure_storage_macos: ^3.1.2
+#  flutter_secure_storage_linux: ^1.2.1
+#  flutter_plugin_android_lifecycle: ^2.0.22
   flutter_device_name: ^0.0.1
   mockito: ^5.4.4
-  riverbloc: ^2.2.0
+  riverbloc: ^2.3.0
   flutter_hooks_bloc:
   get_it: ^7.7.0
   bloc_test: ^9.1.7
@@ -59,42 +63,40 @@ dependencies:
 #  yandex_mapkit_community: ^3.2.0
 #  geolocator: ^10.1.0
 #  geocoding: ^2.1.1
-  flutter_screenutil: ^5.9.0
+  flutter_screenutil: ^5.9.3
   contained_tab_bar_view: ^0.8.0
-  buttons_tabbar: ^1.3.8
-  sms_autofill: ^2.3.1
+  buttons_tabbar: ^1.3.13
+  sms_autofill: ^2.4.0
   otp_text_field_v2: ^1.0.3
-  dio: ^5.4.3+1
+  dio: ^5.6.0
   http:
   jwt_io: ^1.1.6
   google_fonts: ^6.2.1
   intl: 
-  persistent_bottom_nav_bar_v2: ^5.2.3
+  persistent_bottom_nav_bar_v2: ^5.3.0
   flutter_styled_toast:
   flutter_local_notifications:
-  awesome_notifications:
-  awesome_notifications_fcm:
-  awesome_notifications_core:
+  firebase_messaging:
   firebase_core:
   firebase_crashlytics:
-  camera: ^0.10.5+9
-  path_provider: ^2.1.3
+  camera: ^0.11.0+2
+  path_provider: ^2.1.4
   loading_animation_widget: ^1.2.1
   animated_bottom_navigation_bar: ^1.3.3
-  add_to_cart_animation: ^2.0.3
+  add_to_cart_animation: ^2.0.4
   animations: ^2.0.11
-  flutter_map_animations: ^0.6.0
-  statusbarz: ^1.0.14
+  flutter_map_animations: ^0.7.1
   marquee: ^2.2.3
   shimmer: ^3.0.0
   searchbar_animation: ^0.0.4
   bottom_sheet: ^4.0.4
   interactive_bottom_sheet: ^1.0.0
-  auto_route: ^8.1.3
-  go_router: ^13.2.4
+  auto_route: ^9.2.2
+  go_router: ^14.2.7
+  flutter_network_connectivity: ^0.0.6
   flutter_statusbarcolor_ns: ^0.5.0
-  syncfusion_flutter_sliders: ^25.1.40
-  device_info_plus: ^10.1.0
+  syncfusion_flutter_sliders: ^26.2.11
+  device_info_plus: ^10.1.2
 #  google_sign_in: ^6.2.1
 #  sign_in_with_apple: ^5.0.0
   pull_to_refresh_flutter3: ^2.0.2
@@ -103,19 +105,19 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   flutter_search_bar: ^3.0.0
   lazy_load_scrollview: ^1.3.0
-  filter_list: ^1.0.2
+  filter_list: ^1.0.3
   flutter_libphonenumber:
-  google_generative_ai: ^0.3.2
+#  google_generative_ai: ^0.4.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  json_serializable: ^6.7.1
-  build_runner: ^2.4.9
-  retrofit_generator: ^8.1.0
-  freezed: ^2.4.6
-  go_router_builder: ^2.5.1
-  analyzer: ^6.4.1
+  json_serializable: ^6.8.0
+  build_runner: ^2.4.12
+  retrofit_generator: ^8.2.0
+  freezed: ^2.5.7
+  go_router_builder: ^2.7.1
+  analyzer:
   flutter_launcher_icons: ^0.13.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -123,7 +125,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.2
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

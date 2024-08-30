@@ -1,11 +1,19 @@
 // PhoneNumberInput widgeti
+import 'dart:io';
+
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/core/widgets/main_button.dart';
+import 'package:upqayt/features/domain/entities/auth_model.dart';
+import 'package:upqayt/features/presentation/bloc/auth/auth_bloc.dart';
 import 'package:upqayt/features/presentation/controllers/app_animation_controller.dart';
 import 'package:upqayt/features/presentation/controllers/home_controllers.dart';
+import 'package:upqayt/features/presentation/manager/notification.dart';
 import 'package:upqayt/features/presentation/widgets/search_field.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -26,20 +34,47 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
     duration: const Duration(milliseconds: 500),
   );
 
+  late Auth loginModel;
+  late String userToken = '';
+  late String phoneToken = '';
+  late bool auth = false;
   late Animation<double> _loginAnimation;
 
+  late String device;
 
   @override
   void initState() {
     super.initState();
-    _initializeAuthFocus();
+    _checkAuth();
+    if (!auth || homeController.isPhoneFocus.value == true) {
+      _initializeAuthFocus();
+      _initializeDeviceInfo();
+      _getPhoneToken();
+    } else {
+      if (_loginController.isCompleted) {
+        _loginController.reverse();
+      }
+    }
+  }
+
+  void _checkAuth() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    userToken = prefs.getString('userToken') ?? '';
+    if (userToken.isEmpty) {
+      auth = false;
+    }
+  }
+
+  void _initialize() {}
+
+  void _getPhoneToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    phoneToken = prefs.getString('phoneToken') ?? '';
   }
 
   void _initializeAnimations(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final bottom = mediaQuery.viewInsets.bottom;
-    print(bottom);
-    // Animatsiya kontrollerini yarating
 
     // Animatsiyalarni yarating
     _loginAnimation = Tween<double>(
@@ -50,6 +85,17 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
     _loginAnimation.addListener(() {
       controller.updatePosition(_loginAnimation.value);
     });
+  }
+
+  void _initializeDeviceInfo() async {
+    final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    if (Platform.isIOS) {
+      final IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+      device = '${iosInfo.name} ${iosInfo.model}';
+    } else if (Platform.isAndroid) {
+      final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+      device = '${androidInfo.brand.toUpperCase()} ${androidInfo.model}';
+    }
   }
 
   @override
@@ -64,19 +110,22 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
     if (!homeController.isAuth.value) {
       _startLoginAnimation();
       homeController.changeLoginFocusToTrue();
-    }else {
+    } else {
       _phoneFocusNode.unfocus();
     }
   }
 
   // Tizimga kirish animatsiyasini boshlang
   void _startLoginAnimation() {
-    _loginController.forward().then((value) => _phoneFocusNode.requestFocus());
+    _loginController.forward().then(
+          (value) => _phoneFocusNode.requestFocus(),
+        );
   }
 
   @override
   Widget build(BuildContext context) {
     _initializeAnimations(context);
+
     return AnimatedPositioned(
       bottom: _loginAnimation.value,
       left: 0,
@@ -93,6 +142,7 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
             _buildLoginHeader(context),
             _buildPhoneNumberField(context),
             _buildSendButton(context),
+            NotificationManager(),
           ],
         ),
       ),
@@ -110,13 +160,11 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
                 onTap: () {
-
                   homeController.changeLoginFocusToFalse();
                   _phoneFocusNode.unfocus();
                   if (_loginController.isCompleted) {
                     _loginController.reverse();
                   }
-                  print('keyinroq');
                 },
                 child: Icon(
                   Icons.adaptive.arrow_back,
@@ -170,7 +218,7 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
           bgColor: Colors.blueGrey.shade50,
           size: size,
           onTapOutside: (PointerDownEvent value) {
-          homeController.changeLoginFocusToFalse();
+            homeController.changeLoginFocusToFalse();
           },
         ),
       ),
@@ -184,8 +232,7 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
         child: Obx(
           () => MainButton(
             title: 'Yuborish',
-            onTap: () {
-
+            onTap: () async {
               _phoneFocusNode.unfocus();
               if (_loginController.isCompleted) {
                 _loginController.reverse();
@@ -193,6 +240,19 @@ class _LoginWidgetState extends State<LoginWidget> with SingleTickerProviderStat
               homeController.changeLoginFocusToFalse();
               homeController.changeRequestVerifyToTrue();
               homeController.changeIsAuthToTrue();
+              loginModel = Auth(
+                phoneNumber: _phoneController.text,
+                deviceName: device,
+                deviceToken: phoneToken,
+              );
+
+              BlocProvider.of<AuthBloc>(context).add(
+                RegisterDevice(
+                  loginModel,
+                ),
+              );
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setString('phoneNumber', loginModel.phoneNumber);
             },
             titleColor: homeController.phoneNumberLength.value.length == 13 ? Colors.white : AppColors.mainColor, // Bu yerda
             color: AppColors.mainColor.withOpacity(homeController.phoneNumberLength.value.length == 13 ? 1 : .1),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:upqayt/core/colors.dart';
@@ -23,6 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: AppColors.mainColor, // Status bar rangi oq bo'lishi
+          // statusBarIconBrightness: Brightness.light,
+          statusBarBrightness: Brightness.light// Oq yorug'likdagi ikonlarni ko'rsatish
+      ),
+    );
     final size = MediaQuery.sizeOf(context);
     final mediaQuery = MediaQuery.of(context);
     final keyboardHeight = mediaQuery.viewInsets.bottom;
@@ -43,9 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: Column(
               children: [
-                SizedBox(
-                  height: MediaQuery.of(context).padding.top,
-                ),
+                SizedBox(height: MediaQuery.of(context).padding.top),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

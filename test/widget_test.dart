@@ -1,30 +1,64 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:upqayt/app/app.dart';
-
+import 'package:retrofit/retrofit.dart';
+import 'package:test/test.dart';
+import 'package:upqayt/features/domain/entities/auth_model.dart';
+import 'package:upqayt/features/domain/entities/otp_verify_model.dart';
+import 'package:upqayt/features/domain/entities/refresh_token_model.dart';
+import 'package:upqayt/features/domain/services/api_service.dart';
+import 'package:upqayt/features/presentation/widgets/shopping_bag/placing_an_order/address.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget( App());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+  // group('ApiRepository', () {
+  //   test('registerDevice - Success', () async {
+  //     // Create a mock ApiService or use a real implementation if available
+  //     // For simplicity, let's assume we have a mock ApiService
+  //
+  //     // Create an instance of ApiRepository with the mock ApiService
+  //     final apiRepository = MockApiService();
+  //
+  //     // Create a sample DeviceRegistration object
+  //     final deviceRegistration = Auth(
+  //       phoneNumber: "+998901231212",
+  //       deviceName: "Samsung A22",
+  //       deviceToken: "string",
+  //     );
+  //
+  //     // Call the registerDevice method and await the result
+  //      await apiRepository.registerDevice(deviceRegistration);
+  //
+  //
+  //     // Expect the result to be successful (e.g., return null or true)
+  //   });
+  //
+  //   test('verifyOtp - Success', () async {
+  //     // Similar setup as above, create apiRepository, prepare input data, etc.
+  //   });
+  //
+  //   test('refreshToken - Success', () async {
+  //     // Similar setup as above, create apiRepository, prepare input data, etc.
+  //   });
+  // });
 }
+//
+// // Mock ApiService class for testing purposes
+// class MockApiService implements ApiService {
+//   @override
+//   Future<HttpResponse> registerDevice(Auth deviceRegistration) async {
+//     // Mock implementation for registerDevice method
+//     // For simplicity, let's assume it always returns null (success)
+//     return;
+//   }
+//
+//   @override
+//   Future<void> refreshToken(RefreshToken refreshToken) {
+//     // TODO: implement refreshToken
+//     throw UnimplementedError();
+//   }
+//
+//   @override
+//   Future<void> verifyOtp(OtpVerification otpVerification) {
+//     // TODO: implement verifyOtp
+//     throw UnimplementedError();
+//   }
+//
+// // Implement other ApiService methods if needed for testing
+// }

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:upqayt/config/theme.dart';
-import 'package:upqayt/core/bindings.dart';
-import 'package:upqayt/features/presentation/bloc/auth/auth_bloc.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
 
 class App extends StatelessWidget {
@@ -16,26 +12,26 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        builder: (context, child) {
-          return MaterialApp(
-            title: 'Flutter Demo',
-            debugShowCheckedModeBanner: false,
-            theme: _appTheme.lightThemeData,
-            home: child,
-          );
-        },
-        child: HomePage(),
-        // child: TopProductsScreen(),
-        // child: RestaurantDetailScreen(),
-        // child: ShoppingBagScreen(),
-        // child: PlacingAnOrderScreen(),
-        // child: CourierLocation(),
-        // child: OrderScreen(),
-        // child: IntroScreen(),
-        // child: SplashScreen(),
-        // child: YandexMapScreen(),
-        // child: SearchScreen(),
-        // child: OnboardingPage(),
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          theme: _appTheme.lightThemeData,
+          home: child,
+        );
+      },
+      child: HomePage(),
+      // child: TopProductsScreen(),
+      // child: RestaurantDetailScreen(),
+      // child: ShoppingBagScreen(),
+      // child: PlacingAnOrderScreen(),
+      // child: CourierLocation(),
+      // child: OrderScreen(),
+      // child: IntroScreen(),
+      // child: SplashScreen(),
+      // child: YandexMapScreen(),
+      // child: SearchScreen(),
+      // child: OnboardingPage(),
     );
   }
 }

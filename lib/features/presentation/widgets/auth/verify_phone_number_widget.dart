@@ -1,10 +1,14 @@
 // VerifyCodeInput widgeti
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field_v2/otp_field_v2.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/core/widgets/main_button.dart';
+import 'package:upqayt/features/domain/entities/otp_verify_model.dart';
+import 'package:upqayt/features/presentation/bloc/auth/auth_bloc.dart';
 import 'package:upqayt/features/presentation/controllers/app_animation_controller.dart';
 import 'package:upqayt/features/presentation/controllers/home_controllers.dart';
 
@@ -19,6 +23,8 @@ class _VerifyPhoneNumberWidgetState extends State<VerifyPhoneNumberWidget> with 
   final HomeController homeController = Get.find<HomeController>();
   final AppAnimationController appAnimationController = Get.find<AppAnimationController>();
   final OtpFieldControllerV2 otpController = OtpFieldControllerV2();
+  late OtpVerification otpVerification;
+  late String phoneNumber;
   final FocusNode _verifyPhoneFocusNode = FocusNode();
   late final AnimationController _verifySmsController = AnimationController(
     vsync: this,
@@ -47,9 +53,10 @@ class _VerifyPhoneNumberWidgetState extends State<VerifyPhoneNumberWidget> with 
   void _initializeAuthFocus() {
     // `isRequestVerify` holatini kuzatib borish uchun tinglovchi qo'shing
     if (homeController.isRequestVerify.value) {
-      otpController.setFocus(1);
+      otpController.setFocus(0);
       // `true` bo'lganda animatsiyani ishga tushiring
       _startVerifyAnimation();
+      _getPhoneNumber();
       print('is Ever');
     } else {
       print('isRequestVerify ');
@@ -61,6 +68,11 @@ class _VerifyPhoneNumberWidgetState extends State<VerifyPhoneNumberWidget> with 
     print('verify animation');
     _verifySmsController.forward();
     homeController.isVerifyPhoneFocus.value = true;
+  }
+
+  void _getPhoneNumber() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    phoneNumber = prefs.getString('phoneNumber')!;
   }
 
   @override
@@ -178,6 +190,12 @@ class _VerifyPhoneNumberWidgetState extends State<VerifyPhoneNumberWidget> with 
             title: 'Yuborish',
             onTap: () {
               homeController.changeLoginFocusToFalse();
+              otpVerification = OtpVerification(
+                phoneNumber: phoneNumber,
+                otp: homeController.otpLength.value,
+                sessionId: 2,
+              );
+              BlocProvider.of<AuthBloc>(context).add(VerifyOtp(otpVerification));
             },
             titleColor: homeController.otpLength.value.length == 5 ? Colors.white : AppColors.mainColor,
             color: AppColors.mainColor.withOpacity(homeController.otpLength.value.length == 5 ? 1 : .1),
