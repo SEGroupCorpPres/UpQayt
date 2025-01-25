@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:upqayt/core/colors.dart';
 import 'package:upqayt/generated/assets.dart';
 
@@ -17,8 +18,8 @@ class Restaurants extends StatelessWidget {
   final int taxiPrice;
   final int distance;
   final String? rebate;
-  final int openingTime;
-  final int closingTime;
+  final String openingTime;
+  final String closingTime;
   final DateTime currentTime;
   final bool isFavourite;
 
@@ -46,6 +47,9 @@ class Restaurants extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
     DateTime time = currentTime;
     int currentHour = time.hour;
+    DateFormat dateFormat = DateFormat('HH:mm');
+    DateTime parsedOpeningTime = dateFormat.parse(openingTime);
+    DateTime parsedClosingTime = dateFormat.parse(closingTime);
     dynamic ratingNumber = ratingCount;
     if (ratingNumber > 125) {
       ratingNumber = '125+';
@@ -56,7 +60,7 @@ class Restaurants extends StatelessWidget {
         color: Colors.white,
       ),
       margin: const EdgeInsets.symmetric(vertical: 7).h,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10).r,
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10).r,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -100,12 +104,12 @@ class Restaurants extends StatelessWidget {
                       ),
                     )
                   : Container(),
-              closingTime < currentHour || openingTime > currentHour
+              parsedClosingTime.hour < currentHour || parsedOpeningTime.hour > currentHour
                   ? Container(
                       width: size.width,
                       height: 160.h,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(.7),
+                        color: Colors.black.withValues(alpha: .7),
                         borderRadius: BorderRadius.circular(12).r,
                       ),
                       child: Column(
@@ -188,31 +192,43 @@ class Restaurants extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 8.h),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    CupertinoIcons.star_fill,
-                    size: 18.sp,
-                    color: AppColors.activeFavouriteColor,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    '$rating ($ratingNumber)',
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          color: const Color(0xFF667085),
-                          fontSize: 13.sp,
-                        ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Text(
-                    description,
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          color: const Color(0xFF667085),
-                          fontSize: 13.sp,
-                        ),
-                  ),
-                ],
+              Container(
+                constraints: BoxConstraints(maxWidth: size.width - 30.w),
+
+                color: Colors.red,
+                width: size.width - 30.w,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(
+                      CupertinoIcons.star_fill,
+                      size: 18.sp,
+                      color: AppColors.activeFavouriteColor,
+                    ),
+                    SizedBox(width: 8.w),
+                    Text(
+                      '$rating ($ratingNumber)',
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            color: const Color(0xFF667085),
+                            fontSize: 13.sp,
+                          ),
+                      softWrap: true,
+                    ),
+                    SizedBox(width: 10.w),
+                    Container(
+                      color: Colors.green,
+                      width: 220.w,
+                      child: Text(
+                        description,
+                        softWrap: true,
+                        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                              color: const Color(0xFF667085),
+                              fontSize: 13.sp,
+                            ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 10.h),
               Row(

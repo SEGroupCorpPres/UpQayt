@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
+import 'package:upqayt/features/presentation/pages/home/Base64ImageScreen.dart';
 import 'package:upqayt/generated/assets.dart';
 
 class RebateWidget extends StatelessWidget {
@@ -9,7 +11,7 @@ class RebateWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return InkWell(
-      onTap: () {},
+      onTap: () => pushScreen(context, screen: const Base64ImageScreen()),
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: Container(

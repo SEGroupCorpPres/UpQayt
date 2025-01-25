@@ -29,33 +29,34 @@ class HomeScreenRestaurants extends StatelessWidget {
           // SizedBox(height: 10.h),
           ListView.builder(
             shrinkWrap: true,
-            itemCount: restaurants.length,
+            itemCount: mockVendorData['data']['data'].length,
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              dynamic ratingCount = restaurants[index]['rating_count']!;
-              if (ratingCount > 125) {
-                ratingCount = '125+';
-              }
+              Map<String, dynamic> data = mockVendorData['data']['data'][index];
+              dynamic ratingCount = 2452;
+              // if (ratingCount > 125) {
+              //   ratingCount = '125+';
+              // }
               return InkWell(
                 onTap: () => pushScreen(context, screen: const RestaurantDetailScreen(), withNavBar: false),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 child: Restaurants(
-                  image: restaurants[index]['image'],
-                  name: restaurants[index]['name'],
-                  description: restaurants[index]['description'],
-                  ratingCount: restaurants[index]['rating_count'],
-                  rating: restaurants[index]['rating'],
-                  minDistTime: restaurants[index]['min_dist_time'],
-                  maxDistTime: restaurants[index]['max_dist_time'],
-                  price: restaurants[index]['price'],
-                  taxiPrice: restaurants[index]['taxi_price'],
-                  distance: restaurants[index]['distance'],
-                  rebate: restaurants[index]['rebate'],
-                  openingTime: restaurants[index]['opening_time'],
-                  closingTime: restaurants[index]['closing_time'],
-                  isFavourite: restaurants[index]['is_favourite'],
-                  currentTime: restaurants[index]['current_time'],
+                  image: data['background_img'],
+                  name: data['name_uz'],
+                  description: data['desc_uz'],
+                  ratingCount: ratingCount,
+                  rating: 4.5,
+                  minDistTime: 3,
+                  maxDistTime: 5,
+                  price: "15000 UZS",
+                  taxiPrice: 15000,
+                  distance: 5000,
+                  rebate: null,
+                  openingTime: data['opening_time'],
+                  closingTime: data['closing_time'],
+                  isFavourite: true,
+                  currentTime: DateTime.now(),
                 ),
               );
             },

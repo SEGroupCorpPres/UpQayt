@@ -1,8 +1,5 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:test/test.dart';
-import 'package:upqayt/features/domain/entities/auth_model.dart';
-import 'package:upqayt/features/domain/entities/otp_verify_model.dart';
-import 'package:upqayt/features/domain/entities/refresh_token_model.dart';
 import 'package:upqayt/features/domain/services/api_service.dart';
 import 'package:upqayt/features/presentation/widgets/shopping_bag/placing_an_order/address.dart';
 

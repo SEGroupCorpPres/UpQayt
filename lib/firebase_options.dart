@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1039419001903',
     projectId: 'upqayt-41493',
     authDomain: 'upqayt-41493.firebaseapp.com',
-    storageBucket: 'upqayt-41493.appspot.com',
+    storageBucket: 'upqayt-41493.firebasestorage.app',
     measurementId: 'G-BH4B7CK96Z',
   );
 
@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
     appId: '1:1039419001903:android:5742f99c0d4a78d5a30ada',
     messagingSenderId: '1039419001903',
     projectId: 'upqayt-41493',
-    storageBucket: 'upqayt-41493.appspot.com',
+    storageBucket: 'upqayt-41493.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
     appId: '1:1039419001903:ios:9637c5fc8a7b18b8a30ada',
     messagingSenderId: '1039419001903',
     projectId: 'upqayt-41493',
-    storageBucket: 'upqayt-41493.appspot.com',
+    storageBucket: 'upqayt-41493.firebasestorage.app',
     iosBundleId: 'uz.appxtechgroup.presidentftinc.flutter.upqayt',
   );
 
@@ -72,7 +72,7 @@ class DefaultFirebaseOptions {
     appId: '1:1039419001903:ios:9637c5fc8a7b18b8a30ada',
     messagingSenderId: '1039419001903',
     projectId: 'upqayt-41493',
-    storageBucket: 'upqayt-41493.appspot.com',
+    storageBucket: 'upqayt-41493.firebasestorage.app',
     iosBundleId: 'uz.appxtechgroup.presidentftinc.flutter.upqayt',
   );
 
@@ -82,7 +82,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1039419001903',
     projectId: 'upqayt-41493',
     authDomain: 'upqayt-41493.firebaseapp.com',
-    storageBucket: 'upqayt-41493.appspot.com',
+    storageBucket: 'upqayt-41493.firebasestorage.app',
     measurementId: 'G-Z94PSGY0F1',
   );
+
 }

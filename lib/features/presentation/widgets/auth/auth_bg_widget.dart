@@ -10,7 +10,8 @@ class AuthBgWidget extends StatefulWidget {
   State<AuthBgWidget> createState() => _AuthBgWidgetState();
 }
 
-class _AuthBgWidgetState extends State<AuthBgWidget> with SingleTickerProviderStateMixin {
+class _AuthBgWidgetState extends State<AuthBgWidget>
+    with SingleTickerProviderStateMixin {
   final HomeController homeController = Get.find<HomeController>();
   late final AnimationController _authBgController = AnimationController(
     vsync: this,
@@ -28,7 +29,7 @@ class _AuthBgWidgetState extends State<AuthBgWidget> with SingleTickerProviderSt
   bool _isRequestBg = false;
 
   void _isRequestAuthBg() {
-    if (homeController.isPhoneFocus.value || homeController.isVerifyPhoneFocus.value) {
+    if (homeController.isPhoneFocus || homeController.isRequestVerify) {
       _isRequestBg = true;
     } else {
       _isRequestBg = false;
@@ -41,7 +42,8 @@ class _AuthBgWidgetState extends State<AuthBgWidget> with SingleTickerProviderSt
     print(bottom);
 
     // Animatsiyalarni yarating
-    _authBgAnimation = Tween<double>(begin: 0, end: 0).animate(_authBgController);
+    _authBgAnimation =
+        Tween<double>(begin: 0, end: 0).animate(_authBgController);
   }
 
   void _startLoginAnimation() {
@@ -73,7 +75,10 @@ class _AuthBgWidgetState extends State<AuthBgWidget> with SingleTickerProviderSt
                     color: Colors.black54,
                   ),
                   width: size.width,
-                  height: size.height - MediaQuery.of(context).padding.top - kToolbarHeight + 12.r,
+                  height: size.height -
+                      MediaQuery.of(context).padding.top -
+                      kToolbarHeight +
+                      12.r,
                 ),
               ],
             );

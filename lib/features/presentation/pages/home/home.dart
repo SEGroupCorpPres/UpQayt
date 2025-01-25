@@ -15,8 +15,8 @@ import 'package:upqayt/features/presentation/pages/orders/order_screen.dart';
 import 'package:upqayt/features/presentation/pages/profile/profile.dart';
 import 'package:upqayt/features/presentation/pages/search/search_screen.dart';
 import 'package:upqayt/features/presentation/widgets/auth/auth_bg_widget.dart';
-import 'package:upqayt/features/presentation/widgets/auth/login_widget.dart';
-import 'package:upqayt/features/presentation/widgets/auth/verify_phone_number_widget.dart';
+import 'package:upqayt/features/presentation/widgets/auth/login/login_widget.dart';
+import 'package:upqayt/features/presentation/widgets/auth/verify_phone/verify_phone_number_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,14 +27,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // PersistentTabController to'rtta asosiy sahifani boshqaradi.
-  final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+  final PersistentTabController _controller =
+      PersistentTabController(initialIndex: 0);
 
-  final HomeController homeController = Get.put(HomeController()); // `HomeController` ni yaratish va `Get.put` orqali saqlash
+  final HomeController homeController = Get.put(
+      HomeController()); // `HomeController` ni yaratish va `Get.put` orqali saqlash
   // TextField va OTPTextField uchun fokus nodelar
   // Qurilma ma'lumotlari
 
   // Autentifikatsiya holati
-  bool isAuth = false; // Foydalanuvchining autentifikatsiyadan o'tgan yoki o'tmaganligini ko'rsatadi
+  bool isAuth =
+      false; // Foydalanuvchining autentifikatsiyadan o'tgan yoki o'tmaganligini ko'rsatadi
 
   @override
   void initState() {
@@ -55,7 +58,7 @@ class _HomePageState extends State<HomePage> {
     return GestureDetector(
       // TextField tashqarisiga bosilganda klaviaturani yopish
       onTap: () {
-        homeController.isPhoneFocus.value = false;
+        homeController.isPhoneFocus = false;
         homeController.isVerifyPhoneFocus.value = false;
         _showAuthErrorAlert();
       },
@@ -132,7 +135,7 @@ class _HomePageState extends State<HomePage> {
         Platform.isIOS
             ? CupertinoButton(
                 child: Text('Davom Etish'),
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).pop(),
               )
             : MainButton(
                 title: 'Davom Etish',
@@ -160,7 +163,7 @@ class _HomePageState extends State<HomePage> {
         Platform.isIOS
             ? CupertinoButton(
                 child: Text('Davom Etish'),
-                onPressed: () {},
+                onPressed: () => Navigator.pop(context),
               )
             : MainButton(
                 title: 'Davom Etish',

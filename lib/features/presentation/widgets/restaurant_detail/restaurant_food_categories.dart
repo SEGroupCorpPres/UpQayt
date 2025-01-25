@@ -56,10 +56,7 @@ class _RestaurantHeaderCategoryState extends State<RestaurantHeaderCategory> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(10.r),
-          bottomRight: Radius.circular(10.r),
-        ),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(10.r)),
       ),
       height: 50.h,
       child: TabBar(
@@ -79,7 +76,7 @@ class _RestaurantHeaderCategoryState extends State<RestaurantHeaderCategory> {
               height: 30.w,
               padding: EdgeInsets.only(left: index == 0 ? 10.w : 5.w, right: index == foodCategory.length - 1 ? 5.w : 10.w),
               decoration: ShapeDecoration(
-                color: tabController.index == index ? AppColors.mainColor.withOpacity(.8) : Colors.grey.withOpacity(.2),
+                color: tabController.index == index ? AppColors.mainColor.withValues(alpha: (.8)) : Colors.grey.withValues(alpha: .2),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
                   side: BorderSide(

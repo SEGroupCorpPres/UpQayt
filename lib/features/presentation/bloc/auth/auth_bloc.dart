@@ -2,9 +2,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:upqayt/features/domain/entities/auth_model.dart';
-import 'package:upqayt/features/domain/entities/otp_verify_model.dart';
-import 'package:upqayt/features/domain/entities/refresh_token_model.dart';
+import 'package:upqayt/features/data/remote/models/auth_model.dart';
+import 'package:upqayt/features/data/remote/models/otp_verify_model.dart';
+import 'package:upqayt/features/data/remote/models/refresh_token_model.dart';
 import 'package:upqayt/features/domain/services/api_service.dart';
 
 part 'auth_event.dart';

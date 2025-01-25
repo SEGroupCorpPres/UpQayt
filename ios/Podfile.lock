@@ -1,212 +1,286 @@
 PODS:
-  - awesome_notifications (0.8.1):
-    - Flutter
-    - IosAwnCore (~> 0.8.0)
-  - awesome_notifications_fcm (0.8.1):
-    - awesome_notifications
-    - Firebase/Messaging
-    - FirebaseCore
-    - Flutter
-    - IosAwnCore (~> 0.8.0)
-    - IosAwnFcmDist (~> 0.8.0)
+  - AppAuth (1.7.6):
+    - AppAuth/Core (= 1.7.6)
+    - AppAuth/ExternalUserAgent (= 1.7.6)
+  - AppAuth/Core (1.7.6)
+  - AppAuth/ExternalUserAgent (1.7.6):
+    - AppAuth/Core
   - camera_avfoundation (0.0.1):
     - Flutter
-  - Firebase/CoreOnly (10.22.0):
-    - FirebaseCore (= 10.22.0)
-  - Firebase/Crashlytics (10.22.0):
-    - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 10.22.0)
-  - Firebase/Messaging (10.22.0):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (~> 10.22.0)
-  - firebase_core (2.27.0):
-    - Firebase/CoreOnly (= 10.22.0)
+  - connectivity_plus (0.0.1):
     - Flutter
-  - firebase_crashlytics (3.4.18):
-    - Firebase/Crashlytics (= 10.22.0)
+    - FlutterMacOS
+  - device_info_plus (0.0.1):
+    - Flutter
+  - DocumentReader (7.5.4221):
+    - RegulaCommon (= 7.5.935)
+  - DocumentReaderFullRFID (7.5.11009)
+  - FaceSDK (6.4.2321):
+    - RegulaCommon (= 7.5.935)
+  - Firebase/CoreOnly (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+  - Firebase/Crashlytics (11.6.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 11.6.0)
+  - firebase_core (3.10.0):
+    - Firebase/CoreOnly (= 11.6.0)
+    - Flutter
+  - firebase_crashlytics (4.3.0):
+    - Firebase/Crashlytics (= 11.6.0)
     - firebase_core
     - Flutter
-  - FirebaseCore (10.22.0):
-    - FirebaseCoreInternal (~> 10.0)
-    - GoogleUtilities/Environment (~> 7.12)
-    - GoogleUtilities/Logger (~> 7.12)
-  - FirebaseCoreExtension (10.23.0):
-    - FirebaseCore (~> 10.0)
-  - FirebaseCoreInternal (10.23.0):
-    - "GoogleUtilities/NSData+zlib (~> 7.8)"
-  - FirebaseCrashlytics (10.22.0):
-    - FirebaseCore (~> 10.5)
-    - FirebaseInstallations (~> 10.0)
-    - FirebaseSessions (~> 10.5)
-    - GoogleDataTransport (~> 9.2)
-    - GoogleUtilities/Environment (~> 7.8)
-    - nanopb (< 2.30911.0, >= 2.30908.0)
-    - PromisesObjC (~> 2.1)
-  - FirebaseInstallations (10.23.0):
-    - FirebaseCore (~> 10.0)
-    - GoogleUtilities/Environment (~> 7.8)
-    - GoogleUtilities/UserDefaults (~> 7.8)
-    - PromisesObjC (~> 2.1)
-  - FirebaseMessaging (10.22.0):
-    - FirebaseCore (~> 10.0)
-    - FirebaseInstallations (~> 10.0)
-    - GoogleDataTransport (~> 9.3)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
-    - GoogleUtilities/Environment (~> 7.8)
-    - GoogleUtilities/Reachability (~> 7.8)
-    - GoogleUtilities/UserDefaults (~> 7.8)
-    - nanopb (< 2.30911.0, >= 2.30908.0)
-  - FirebaseSessions (10.24.0):
-    - FirebaseCore (~> 10.5)
-    - FirebaseCoreExtension (~> 10.0)
-    - FirebaseInstallations (~> 10.0)
-    - GoogleDataTransport (~> 9.2)
-    - GoogleUtilities/Environment (~> 7.10)
-    - nanopb (< 2.30911.0, >= 2.30908.0)
+  - FirebaseCore (11.6.0):
+    - FirebaseCoreInternal (~> 11.6.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/Logger (~> 8.0)
+  - FirebaseCoreExtension (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+  - FirebaseCoreInternal (11.6.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+  - FirebaseCrashlytics (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - FirebaseRemoteConfigInterop (~> 11.0)
+    - FirebaseSessions (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - FirebaseInstallations (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - PromisesObjC (~> 2.4)
+  - FirebaseRemoteConfigInterop (11.6.0)
+  - FirebaseSessions (11.6.0):
+    - FirebaseCore (~> 11.6.0)
+    - FirebaseCoreExtension (~> 11.6.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - nanopb (~> 3.30910.0)
     - PromisesSwift (~> 2.1)
   - Flutter (1.0.0)
+  - flutter_document_reader_api (7.5.1093):
+    - DocumentReader (= 7.5.4221)
+    - Flutter
+  - flutter_document_reader_core_fullrfid (7.5.887):
+    - DocumentReaderFullRFID (= 7.5.11009)
+    - Flutter
+  - flutter_face_api (6.4.875):
+    - FaceSDK (= 6.4.2321)
+    - Flutter
   - flutter_libphonenumber_ios (1.1.4):
     - Flutter
-    - PhoneNumberKit/PhoneNumberKitCore (= 3.7.9)
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.8.0)
   - flutter_local_notifications (0.0.1):
+    - Flutter
+  - flutter_network_connectivity (0.0.1):
+    - Flutter
+  - flutter_secure_storage (6.0.0):
     - Flutter
   - flutter_statusbarcolor_ns (0.0.1):
     - Flutter
-  - GoogleDataTransport (9.4.1):
-    - GoogleUtilities/Environment (~> 7.7)
-    - nanopb (< 2.30911.0, >= 2.30908.0)
-    - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/AppDelegateSwizzler (7.13.0):
+  - geocoding_ios (1.0.5):
+    - Flutter
+  - geolocator_apple (1.2.0):
+    - Flutter
+  - google_sign_in_ios (0.0.1):
+    - AppAuth (>= 1.7.4)
+    - Flutter
+    - FlutterMacOS
+    - GoogleSignIn (~> 7.1)
+    - GTMSessionFetcher (>= 3.4.0)
+  - GoogleDataTransport (10.1.0):
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - GoogleSignIn (7.1.0):
+    - AppAuth (< 2.0, >= 1.7.3)
+    - GTMAppAuth (< 5.0, >= 4.1.1)
+    - GTMSessionFetcher/Core (~> 3.3)
+  - GoogleUtilities/Environment (8.0.2):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.0.2):
     - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
     - GoogleUtilities/Privacy
-  - GoogleUtilities/Environment (7.13.0):
+  - "GoogleUtilities/NSData+zlib (8.0.2)":
     - GoogleUtilities/Privacy
-    - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.13.0):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Privacy
-  - GoogleUtilities/Network (7.13.0):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Privacy
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.13.0)":
-    - GoogleUtilities/Privacy
-  - GoogleUtilities/Privacy (7.13.0)
-  - GoogleUtilities/Reachability (7.13.0):
+  - GoogleUtilities/Privacy (8.0.2)
+  - GoogleUtilities/UserDefaults (8.0.2):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
-  - GoogleUtilities/UserDefaults (7.13.0):
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Privacy
-  - IosAwnCore (0.8.0)
-  - IosAwnFcmDist (0.8.0):
-    - FirebaseCore
-    - FirebaseMessaging
-    - IosAwnCore (~> 0.8.0)
-  - nanopb (2.30910.0):
-    - nanopb/decode (= 2.30910.0)
-    - nanopb/encode (= 2.30910.0)
-  - nanopb/decode (2.30910.0)
-  - nanopb/encode (2.30910.0)
+  - GTMAppAuth (4.1.1):
+    - AppAuth/Core (~> 1.7)
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3)
+  - GTMSessionFetcher (3.5.0):
+    - GTMSessionFetcher/Full (= 3.5.0)
+  - GTMSessionFetcher/Core (3.5.0)
+  - GTMSessionFetcher/Full (3.5.0):
+    - GTMSessionFetcher/Core
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - PhoneNumberKit/PhoneNumberKitCore (3.7.9)
+  - PhoneNumberKit/PhoneNumberKitCore (3.8.0)
   - PromisesObjC (2.4.0)
   - PromisesSwift (2.4.0):
     - PromisesObjC (= 2.4.0)
+  - RegulaCommon (7.5.935)
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
+  - sms_autofill (0.0.1):
+    - Flutter
+  - yandex_mapkit (0.0.1):
+    - Flutter
+    - YandexMapsMobile (= 4.6.1-full)
+  - YandexMapsMobile (4.6.1-full)
 
 DEPENDENCIES:
-  - awesome_notifications (from `.symlinks/plugins/awesome_notifications/ios`)
-  - awesome_notifications_fcm (from `.symlinks/plugins/awesome_notifications_fcm/ios`)
   - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/darwin`)
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - Flutter (from `Flutter`)
+  - flutter_document_reader_api (from `.symlinks/plugins/flutter_document_reader_api/ios`)
+  - flutter_document_reader_core_fullrfid (from `.symlinks/plugins/flutter_document_reader_core_fullrfid/ios`)
+  - flutter_face_api (from `.symlinks/plugins/flutter_face_api/ios`)
   - flutter_libphonenumber_ios (from `.symlinks/plugins/flutter_libphonenumber_ios/ios`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
+  - flutter_network_connectivity (from `.symlinks/plugins/flutter_network_connectivity/ios`)
+  - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - flutter_statusbarcolor_ns (from `.symlinks/plugins/flutter_statusbarcolor_ns/ios`)
+  - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
+  - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
+  - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/darwin`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
+  - sms_autofill (from `.symlinks/plugins/sms_autofill/ios`)
+  - yandex_mapkit (from `.symlinks/plugins/yandex_mapkit/ios`)
+  - YandexMapsMobile (= 4.6.1-full)
 
 SPEC REPOS:
   trunk:
+    - AppAuth
+    - DocumentReader
+    - DocumentReaderFullRFID
+    - FaceSDK
     - Firebase
     - FirebaseCore
     - FirebaseCoreExtension
     - FirebaseCoreInternal
     - FirebaseCrashlytics
     - FirebaseInstallations
-    - FirebaseMessaging
+    - FirebaseRemoteConfigInterop
     - FirebaseSessions
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
-    - IosAwnCore
-    - IosAwnFcmDist
+    - GTMAppAuth
+    - GTMSessionFetcher
     - nanopb
     - PhoneNumberKit
     - PromisesObjC
     - PromisesSwift
+    - RegulaCommon
+    - YandexMapsMobile
 
 EXTERNAL SOURCES:
-  awesome_notifications:
-    :path: ".symlinks/plugins/awesome_notifications/ios"
-  awesome_notifications_fcm:
-    :path: ".symlinks/plugins/awesome_notifications_fcm/ios"
   camera_avfoundation:
     :path: ".symlinks/plugins/camera_avfoundation/ios"
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/darwin"
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
   firebase_crashlytics:
     :path: ".symlinks/plugins/firebase_crashlytics/ios"
   Flutter:
     :path: Flutter
+  flutter_document_reader_api:
+    :path: ".symlinks/plugins/flutter_document_reader_api/ios"
+  flutter_document_reader_core_fullrfid:
+    :path: ".symlinks/plugins/flutter_document_reader_core_fullrfid/ios"
+  flutter_face_api:
+    :path: ".symlinks/plugins/flutter_face_api/ios"
   flutter_libphonenumber_ios:
     :path: ".symlinks/plugins/flutter_libphonenumber_ios/ios"
   flutter_local_notifications:
     :path: ".symlinks/plugins/flutter_local_notifications/ios"
+  flutter_network_connectivity:
+    :path: ".symlinks/plugins/flutter_network_connectivity/ios"
+  flutter_secure_storage:
+    :path: ".symlinks/plugins/flutter_secure_storage/ios"
   flutter_statusbarcolor_ns:
     :path: ".symlinks/plugins/flutter_statusbarcolor_ns/ios"
+  geocoding_ios:
+    :path: ".symlinks/plugins/geocoding_ios/ios"
+  geolocator_apple:
+    :path: ".symlinks/plugins/geolocator_apple/ios"
+  google_sign_in_ios:
+    :path: ".symlinks/plugins/google_sign_in_ios/darwin"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
+  sms_autofill:
+    :path: ".symlinks/plugins/sms_autofill/ios"
+  yandex_mapkit:
+    :path: ".symlinks/plugins/yandex_mapkit/ios"
 
 SPEC CHECKSUMS:
-  awesome_notifications: db394d2e061e4583ba0f738ddea611e3986cc3fb
-  awesome_notifications_fcm: 554a9088f81a91dbe8a318abee6b48f43e4a9417
-  camera_avfoundation: 759172d1a77ae7be0de08fc104cfb79738b8a59e
-  Firebase: 797fd7297b7e1be954432743a0b3f90038e45a71
-  firebase_core: 100945864b4aedce3cfef0c62ab864858bf013cf
-  firebase_crashlytics: 2b9ca6246501a03427eb43280be7615027e32142
-  FirebaseCore: 0326ec9b05fbed8f8716cddbf0e36894a13837f7
-  FirebaseCoreExtension: cb88851781a24e031d1b58e0bd01eb1f46b044b5
-  FirebaseCoreInternal: 6a292e6f0bece1243a737e81556e56e5e19282e3
-  FirebaseCrashlytics: e568d68ce89117c80cddb04073ab9018725fbb8c
-  FirebaseInstallations: 42d6ead4605d6eafb3b6683674e80e18eb6f2c35
-  FirebaseMessaging: 9f71037fd9db3376a4caa54e5a3949d1027b4b6e
-  FirebaseSessions: 2651b464e241c93fd44112f995d5ab663c970487
+  AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
+  camera_avfoundation: dd002b0330f4981e1bbcb46ae9b62829237459a4
+  connectivity_plus: 18382e7311ba19efcaee94442b23b32507b20695
+  device_info_plus: bf2e3232933866d73fe290f2942f2156cdd10342
+  DocumentReader: 972979da2ff7c8122c7a1c926127e84877c5b24d
+  DocumentReaderFullRFID: 02e9bad897ae1b7ef980a0344171959e3c09ac21
+  FaceSDK: e96016e36d5507ad9d9ee3b011d735f5fe51829f
+  Firebase: 374a441a91ead896215703a674d58cdb3e9d772b
+  firebase_core: feb37e79f775c2bd08dd35e02d83678291317e10
+  firebase_crashlytics: 609a5f6f4a2f5af9e40a68182e0c1be3ca2a02f6
+  FirebaseCore: 48b0dd707581cf9c1a1220da68223fb0a562afaa
+  FirebaseCoreExtension: 2d77d6430c16cf43ca2b04608302ed02b3598361
+  FirebaseCoreInternal: d98ab91e2d80a56d7b246856a8885443b302c0c2
+  FirebaseCrashlytics: b21c665fb50138766480bce73ebdb1aa30f7f300
+  FirebaseInstallations: efc0946fc756e4d22d8113f7c761948120322e8c
+  FirebaseRemoteConfigInterop: e75e348953352a000331eb77caf01e424248e176
+  FirebaseSessions: 9529d14180868e29a8da164b3a729c036204918b
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_libphonenumber_ios: eb22e6f6e97c9604805f00bff961ca397071dfdc
-  flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
+  flutter_document_reader_api: e15ffdf3af39b472a04a91fe981ddd243d96fca0
+  flutter_document_reader_core_fullrfid: 73d8b5ecb9cd46c6151ab63eba2a8e2e0b8c7a9a
+  flutter_face_api: 19a44e9a83d5d0975f9a9d9b6f8667a4078c79e5
+  flutter_libphonenumber_ios: 5ad8620197bff91dd159d828b7544ec6956e86a1
+  flutter_local_notifications: df98d66e515e1ca797af436137b4459b160ad8c9
+  flutter_network_connectivity: 4769b76bfc2f970ecfe3d9dbd5f23bb066f85a65
+  flutter_secure_storage: d33dac7ae2ea08509be337e775f6b59f1ff45f12
   flutter_statusbarcolor_ns: 68a360889d88d7915ae524e422aeab62e4063804
-  GoogleDataTransport: 6c09b596d841063d76d4288cc2d2f42cc36e1e2a
-  GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
-  IosAwnCore: ed1b2b6d84962a758354dbacd9ce525c72ce28a9
-  IosAwnFcmDist: 0ac4da8f9ef8f2db9e5ec5d0c10c8db793ce447d
-  nanopb: 438bc412db1928dac798aa6fd75726007be04262
-  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
-  PhoneNumberKit: 9c8d546d65c3784721d575a29e712ae8b992fe79
+  geocoding_ios: d7460f56e80e118d57678efe5c2cdc888739ff18
+  geolocator_apple: 9bcea1918ff7f0062d98345d238ae12718acfbc1
+  google_sign_in_ios: 07375bfbf2620bc93a602c0e27160d6afc6ead38
+  GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
+  GoogleSignIn: d4281ab6cf21542b1cfaff85c191f230b399d2db
+  GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
+  GTMAppAuth: f69bd07d68cd3b766125f7e072c45d7340dea0de
+  GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
+  PhoneNumberKit: ec00ab8cef5342c1dc49fadb99d23fa7e66cf0ef
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
-  shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
+  RegulaCommon: 2a6406d2d3ebbd720b66a9cfa5b9631701d343eb
+  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
+  sms_autofill: c461043483362c3f1709ee76eaae6eb570b31686
+  yandex_mapkit: dbed94b27b44a3945a93209721e92f6b846dafde
+  YandexMapsMobile: b5f4dfeb8d1fe324dc18afb33d772b04d04d34f6
 
-PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
+PODFILE CHECKSUM: 3192bc0ea7fc3cec6b1cb871cec82013ec11a1f0
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.16.2

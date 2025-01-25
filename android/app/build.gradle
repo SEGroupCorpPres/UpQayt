@@ -65,4 +65,10 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation "com.google.android.gms:play-services-location:21.1.0"
+    implementation "com.yandex.android:maps.mobile:4.6.1-full"
+// Work Manager dependency. You should add it if you want to use offline maps
+// implementation "androidx.work:work-runtime:2.9.0"
+
+}

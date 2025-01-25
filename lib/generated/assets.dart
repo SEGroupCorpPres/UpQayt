@@ -127,6 +127,27 @@ class Assets {
   static const String imagesXorazmLavash = 'assets/images/xorazm_lavash.png';
   static const String l10nRu = 'assets/l10n/ru.json';
   static const String l10nUz = 'assets/l10n/uz.json';
+  static const String mockDataMOCKDATA = 'assets/mock_data/MOCK_DATA.json';
+  static const String mockDataMOCKDATA1 = 'assets/mock_data/MOCK_DATA_1.json';
+  static const String mockDataMOCKDATA2 = 'assets/mock_data/MOCK_DATA_2.json';
+  static const String rubikOFL = 'assets/fonts/Rubik/OFL.txt';
+  static const String rubikREADME = 'assets/fonts/Rubik/README.txt';
+  static const String rubikRubikItalicVariableFontWght = 'assets/fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf';
+  static const String rubikRubikVariableFontWght = 'assets/fonts/Rubik/Rubik-VariableFont_wght.ttf';
+  static const String staticRubikBlack = 'assets/fonts/Rubik/static/Rubik-Black.ttf';
+  static const String staticRubikBlackItalic = 'assets/fonts/Rubik/static/Rubik-BlackItalic.ttf';
+  static const String staticRubikBold = 'assets/fonts/Rubik/static/Rubik-Bold.ttf';
+  static const String staticRubikBoldItalic = 'assets/fonts/Rubik/static/Rubik-BoldItalic.ttf';
+  static const String staticRubikExtraBold = 'assets/fonts/Rubik/static/Rubik-ExtraBold.ttf';
+  static const String staticRubikExtraBoldItalic = 'assets/fonts/Rubik/static/Rubik-ExtraBoldItalic.ttf';
+  static const String staticRubikItalic = 'assets/fonts/Rubik/static/Rubik-Italic.ttf';
+  static const String staticRubikLight = 'assets/fonts/Rubik/static/Rubik-Light.ttf';
+  static const String staticRubikLightItalic = 'assets/fonts/Rubik/static/Rubik-LightItalic.ttf';
+  static const String staticRubikMedium = 'assets/fonts/Rubik/static/Rubik-Medium.ttf';
+  static const String staticRubikMediumItalic = 'assets/fonts/Rubik/static/Rubik-MediumItalic.ttf';
+  static const String staticRubikRegular = 'assets/fonts/Rubik/static/Rubik-Regular.ttf';
+  static const String staticRubikSemiBold = 'assets/fonts/Rubik/static/Rubik-SemiBold.ttf';
+  static const String staticRubikSemiBoldItalic = 'assets/fonts/Rubik/static/Rubik-SemiBoldItalic.ttf';
   static const String upQaytAssetsLogo = 'assets/logo.svg';
 
 }

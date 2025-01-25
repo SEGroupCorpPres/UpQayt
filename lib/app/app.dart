@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:upqayt/config/theme.dart';
 import 'package:upqayt/features/presentation/pages/home/home.dart';
 
@@ -13,7 +14,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: _appTheme.lightThemeData,

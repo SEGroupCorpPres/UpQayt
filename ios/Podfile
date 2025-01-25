@@ -3,6 +3,7 @@
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+ENV['YANDEX_MAPKIT_VARIANT'] = 'full'
 
 project 'Runner', {
   'Debug' => :debug,
@@ -29,6 +30,12 @@ flutter_ios_podfile_setup
 
 target 'Runner' do
   use_frameworks!
+#   pod 'YandexMapsMobile', '4.6.1-lite'
+
+  # The full library supplements lite version features with car routing,
+  # bike routing, pedestrian routing, and public transport routing,
+  # search, suggest, geocoding, and panorama display.
+  pod 'YandexMapsMobile', '4.6.1-full'
   use_modular_headers!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
@@ -40,5 +47,10 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+    if target.name == "geolocator_apple"
+          target.build_configurations.each do |config|
+            config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'BYPASS_PERMISSION_LOCATION_ALWAYS=1']
+          end
+        end
   end
 end

@@ -8,7 +8,7 @@ abstract class AuthEvent extends Equatable {
   List<Object> get props => [];
 }
 class RegisterDevice extends AuthEvent {
-  final Auth deviceRegistration;
+  final AuthModel deviceRegistration;
 
   const RegisterDevice(this.deviceRegistration);
 
@@ -17,7 +17,7 @@ class RegisterDevice extends AuthEvent {
 }
 
 class VerifyOtp extends AuthEvent {
-  final OtpVerification otpVerification;
+  final OtpVerificationModel otpVerification;
 
   const VerifyOtp(this.otpVerification);
 
@@ -26,7 +26,7 @@ class VerifyOtp extends AuthEvent {
 }
 
 class RefreshTokenEvent extends AuthEvent {
-  final RefreshToken refreshToken;
+  final RefreshTokenModel refreshToken;
 
   const RefreshTokenEvent(this.refreshToken);
 
